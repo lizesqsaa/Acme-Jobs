@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+- sample-data.xml
+-
+- Copyright (c) 2019 Rafael Corchuelo.
+-
+- In keeping with the traditional purpose of furthering education and research, it is
+- the policy of the copyright owner to permit non-commercial use and redistribution of
+- this software. It has been tested carefully, but it is not guaranteed for any particular
+- purposes.  The copyright owner does not offer any warranties or representations, nor do
+- they accept any liabilities with respect to them.
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<import resource="conversion-service.xml" />
+	
+	<!-- Announcements -->
+	
+	<bean id="announcement01" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample announcement 01"/>
+		<property name="moment" value="2019/10/31 14:30"/>
+		<property name="moreInfo"><null/></property>
+		<property name="text" value="This is the first description"/>
+	</bean>
+	
+	<bean id="announcement02" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample announcement 02"/>
+		<property name="moment" value="2002/10/24 12:00"/>
+		<property name="moreInfo" value="https://github.com"/>
+		<property name="text" value="This is the second description"/>
+	</bean>
+	
+	<bean id="announcement03" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample announcement 03"/>
+		<property name="moment" value="2019/11/01 11:25"/>
+		<property name="moreInfo" value="https://example.com"/>
+		<property name="text" value="This is the third description"/>
+	</bean>
+	
+	<bean id="announcement04" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample announcement 04"/>
+		<property name="moment" value="2010/01/10 01:05"/>
+		<property name="moreInfo"><null/></property>
+		<property name="text" value="This is the fourth description"/>
+	</bean>
+
+<!-- Request -->
+
+	<bean class="acme.entities.requests.Request" id="request1">
+		<property value="RABCD-1234" name="ticker"/>
+		<property value="2018/01/05 11:00" name="creationMoment"/>
+		<property value="2020/01/05 11:00" name="deadline"/>
+		<property value="Engineers Wanted!" name="title"/>
+		<property value="MASA needs new engineers. Apply here" name="text"/>
+		<property name="reward">
+			<bean class="acme.framework.datatypes.Money">
+				<property value="10000" name="amount"/>
+				<property value="€" name="currency"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean class="acme.entities.requests.Request" id="request2">
+		<property value="RABCD-1235" name="ticker"/>
+		<property value="2018/01/06 11:00" name="creationMoment"/>
+		<property value="2020/01/06 11:00" name="deadline"/>
+		<property value="Maths Wanted!" name="title"/>
+		<property value="MASA needs new maths. Apply here" name="text"/>
+		<property name="reward">
+			<bean class="acme.framework.datatypes.Money">
+				<property value="14000" name="amount"/>
+				<property value="€" name="currency"/>
+			</bean>
+		</property>
+	</bean>
+	
+		
+	<bean class="acme.entities.requests.Request" id="request3">
+		<property value="RABCD-1236" name="ticker"/>
+		<property value="2018/03/06 11:00" name="creationMoment"/>
+		<property value="2020/03/06 11:00" name="deadline"/>
+		<property value="Developers Wanted!" name="title"/>
+		<property value="MASA needs new devs. Apply here" name="text"/>
+		<property name="reward">
+			<bean class="acme.framework.datatypes.Money">
+				<property value="18000" name="amount"/>
+				<property value="€" name="currency"/>
+			</bean>
+		</property>
+	</bean>
+  
+  
+  <!-- CompanyRecords -->
+	
+	<bean id= "record 1" class="acme.entities.companyRecords.CompanyRecord" >
+	  <property name="name" value=" Acme, INC"/>
+	  <property name="sector" value=" IT"/>
+	  <property name="ceo" value=" Manuel Morales Gil"/>
+	  <property name="description" value=" bussiness intelligence"/>
+	  <property name="website" value=" http://acme.es " />
+	  <property name="phone" value="+666(9999)55555555"/>
+	  <property name="email" value="acme@company.com"/>
+	  <property name="isInc" value="true"/> 
+	  <property name="starNumber" value="3"/>
+	   
+	 </bean>
+	  
+	 <bean id= "record 2" class="acme.entities.companyRecords.CompanyRecord" >
+	  <property name="name" value=" Companyus, LLC"/>
+	  <property name="sector" value=" IT "/>
+	  <property name="ceo" value=" Lizseth Esquen Saavedra "/>
+	  <property name="description" value=" ERP, CRM, Business Intelligence "/>
+	  <property name="website" value=" http://companyus.es " />
+	  <property name="phone" value="+456(1299)75585595"/>
+	  <property name="email" value="cus@empresa.com"/>
+	  <property name="isInc" value="false"/> 
+	  <property name="starNumber" value="5"/>
+	   
+	 </bean>
+	 
+	  
+	 <bean id= "record 3" class="acme.entities.companyRecords.CompanyRecord" >
+	  <property name="name" value=" Aloha"/>
+	  <property name="sector" value=" IT "/>
+	  <property name="ceo" value=" Juan Roma Po "/>
+	  <property name="description" value=" ERP, CRM, Business Intelligence "/>
+	  <property name="website" value=" http://aloha.es " />
+	  <property name="phone" value="+492(1231)76582595"/>
+	  <property name="email" value="aloha@empresa.com"/>
+	  <property name="isInc" value="false"/> 
+	  <property name="starNumber" value="5"/>
+	   
+	 </bean>
+	
+
+<!-- Offers -->
+
+<bean id="offer01" class="acme.entities.offers.Offer">
+	  <property name="title" value="Dev ops"/>
+	  <property name="creationMoment" value="2002/06/06 00:10"/>
+	  <property name="limitDate" value="2022/06/06 00:00"/>
+	  <property name="descriptionText" value="New great job offer in IBM"/>
+	  <property name="amount" value="30000.00 €"/>
+	  <property name="ticker" value="OAAAA-99999"/>
+	</bean>
+	
+	<bean id="offer02" class="acme.entities.offers.Offer">
+	  <property name="title" value="Software Tester"/>
+	  <property name="creationMoment" value="2018/06/06 13:00"/>
+	  <property name="limitDate" value="2028/06/07 15:00"/>
+	  <property name="descriptionText" value="New great job offer in Microsoft"/>
+	  <property name="amount" value="31000.00 €"/>
+	  <property name="ticker" value="OAAAA-99990"/>
+	</bean>
+	
+	<bean id="offer03" class="acme.entities.offers.Offer">
+	  <property name="title" value="Data analyst"/>
+	  <property name="creationMoment" value="2018/06/06 00:03"/>
+	  <property name="limitDate" value="2020/06/11 22:00"/>
+	  <property name="descriptionText" value="Google need Data analysts"/>
+	  <property name="amount" value="40000.00 €"/>
+	  <property name="ticker" value="OAAAA-99998"/>
+	</bean>
+	
+	<bean id="offer04" class="acme.entities.offers.Offer">
+	  <property name="title" value="UX designer"/>
+	  <property name="creationMoment" value="2002/06/06 01:00"/>
+	  <property name="limitDate" value="2021/06/08 10:00"/>
+	  <property name="descriptionText" value="Hooli need you"/>
+	  <property name="amount" value="50000.00 €"/>
+	  <property name="ticker" value="OAAAA-00000"/>
+	</bean>
+  
+  
+  <!-- Investor -->
+  
+  <bean id="investor01" class="acme.entities.investors.Investor">
+	<property name="investorName" value="Elena Puerta" />
+	<property name="sector" value="Industrial" />
+	<property name="investingStatement" value="Se ha invertido en una máquina industrial"/>
+	<property name="starsNumber" value="2" />
+</bean>
+	
+	<bean id="investor02" class="acme.entities.investors.Investor">
+		<property name="investorName" value="Manuel Caballo"/>
+		<property name="sector" value = "Financiero"/>
+		<property name="investingStatement" value="Se ha invertido en el sector financiero"/>
+		<property name="starsNumber"><null/></property>
+	</bean>
+	
+	<bean id="investor03" class="acme.entities.investors.Investor">
+		<property name="investorName" value="Gerardo Valiente"/>
+		<property name="sector" value = "Salud"/>
+		<property name="investingStatement" value="Se ha invertido en un hospital de Sevilla"/>
+		<property name="starsNumber" value="5"/>
+	</bean>
+  
+  
+  <!-- Challenge -->
+
+	<bean class="acme.entities.challenges.Challenge" id="challenge1">
+		<property value="Engineers Wanted!" name="title"/>
+		<property value="2020/01/05 11:00" name="deadline"/>
+		<property value="MASA needs new engineers. Apply here" name="description"/>
+		<property value="Resolve gold challenge" name="goldGoal"/>
+		<property name="goldReward">
+			<bean class="acme.framework.datatypes.Money">
+				<property value="400" name="amount"/>
+				<property value="€" name="currency"/>
+			</bean>
+		</property>
+		<property value="Resolve silver challenge" name="silverGoal"/>
+		<property name="silverReward">
+			<bean class="acme.framework.datatypes.Money">
+				<property value="300" name="amount"/>
+				<property value="€" name="currency"/>
+			</bean>
+		</property>
+		<property value="Resolve bronze challenge" name="bronzeGoal"/>
+		<property name="bronzeReward">
+			<bean class="acme.framework.datatypes.Money">
+				<property value="200" name="amount"/>
+				<property value="€" name="currency"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean class="acme.entities.challenges.Challenge" id="challenge2">
+		<property value="Maths Wanted!" name="title"/>
+		<property value="2020/02/05 11:25" name="deadline"/>
+		<property value="MASA needs new maths. Apply here" name="description"/>
+		<property value="Resolve gold math problem" name="goldGoal"/>
+		<property name="goldReward">
+			<bean class="acme.framework.datatypes.Money">
+				<property value="600" name="amount"/>
+				<property value="€" name="currency"/>
+			</bean>
+		</property>
+		<property value="Resolve silver math problem" name="silverGoal"/>
+		<property name="silverReward">
+			<bean class="acme.framework.datatypes.Money">
+				<property value="500" name="amount"/>
+				<property value="€" name="currency"/>
+			</bean>
+		</property>
+		<property value="Resolve bronze math problem" name="bronzeGoal"/>
+		<property name="bronzeReward">
+			<bean class="acme.framework.datatypes.Money">
+				<property value="300" name="amount"/>
+				<property value="€" name="currency"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean class="acme.entities.challenges.Challenge" id="challenge3">
+		<property value="Developers Wanted!" name="title"/>
+		<property value="2020/04/03 12:00" name="deadline"/>
+		<property value="MASA needs new developers. Apply here" name="description"/>
+		<property value="Create an app" name="goldGoal"/>
+		<property name="goldReward">
+			<bean class="acme.framework.datatypes.Money">
+				<property value="6000" name="amount"/>
+				<property value="€" name="currency"/>
+			</bean>
+		</property>
+		<property value="Create an api" name="silverGoal"/>
+		<property name="silverReward">
+			<bean class="acme.framework.datatypes.Money">
+				<property value="3500" name="amount"/>
+				<property value="€" name="currency"/>
+			</bean>
+		</property>
+		<property value="Create a web" name="bronzeGoal"/>
+		<property name="bronzeReward">
+			<bean class="acme.framework.datatypes.Money">
+				<property value="1500" name="amount"/>
+				<property value="€" name="currency"/>
+			</bean>
+		</property>
+	</bean>
+  
+  
+</beans>
