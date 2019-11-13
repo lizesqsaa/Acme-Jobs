@@ -16,21 +16,29 @@ import acme.framework.entities.Administrator;
 @RequestMapping("/administrator/announcement/")
 public class AdministratorAnnouncementController extends AbstractController<Administrator, Announcement> {
 
-	// Internal state
-
 	@Autowired
 	private AdministratorAnnouncementListService	listService;
 
 	@Autowired
 	private AdministratorAnnouncementShowService	showService;
 
+	@Autowired
+	private AdministratorAnnouncementCreateService	createService;
 
-	// Constructors
+	@Autowired
+	private AdministratorAnnouncementUpdateService	updateService;
+
+	@Autowired
+	private AdministratorAnnouncementDeleteService	deleteService;
+
 
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 	}
 
 }
