@@ -40,6 +40,8 @@ master.menu.anonymous.investor = Lista de inversores
 master.menu.administrator = Administrador
 master.menu.administrator.user-accounts = Cuentas de usuarios
 master.menu.administrator.announcement = Lista de anuncios
+master.menu.administrator.challenge.list = Lista de retos
+master.menu.administrator.challenge.create = Crear un reto
 master.menu.administrator.customization = Mostrar personalización
 master.menu.administrator.shutdown = Parar el sistema
 
