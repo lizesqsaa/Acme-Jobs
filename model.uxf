@@ -411,7 +411,7 @@ Request
 Announcement
 --
 + title: String{NotBlank}
-+ moment: Date{Temporal(TIMESTAMP), Past, NotNull}
++ moment: Date{Temporal(TIMESTAMP), Past}
 + moreInfo:String{URL}
 + text: String{NotBlank}</panel_attributes>
     <additional_attributes/>

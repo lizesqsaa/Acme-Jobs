@@ -16,9 +16,13 @@ import acme.framework.services.AbstractCreateService;
 @Service
 public class AdministratorAnnouncementCreateService implements AbstractCreateService<Administrator, Announcement> {
 
+	// Internal state -----------------------------------------------------------------------
+
 	@Autowired
 	AdministratorAnnouncementRepository repository;
 
+
+	// AbstractCreateService<Administrator, Announcement> interface -------------------------
 
 	@Override
 	public boolean authorise(final Request<Announcement> request) {
@@ -33,7 +37,6 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert errors != null;
 
 		request.bind(entity, errors, "moment");
-
 	}
 
 	@Override
@@ -42,8 +45,7 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "moreInfo", "text");
-
+		request.unbind(entity, model, "title", "text", "moreInfo");
 	}
 
 	@Override
@@ -60,7 +62,6 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
 	}
 
 	@Override
@@ -70,6 +71,6 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setMoment(moment);
 		this.repository.save(entity);
-
 	}
+
 }
