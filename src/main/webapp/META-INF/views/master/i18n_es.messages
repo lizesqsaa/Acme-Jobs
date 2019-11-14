@@ -41,6 +41,8 @@ master.menu.administrator = Administrador
 master.menu.administrator.user-accounts = Cuentas de usuarios
 master.menu.administrator.announcement = Lista de anuncios
 master.menu.administrator.customization = Mostrar personalización
+master.menu.administrator.investor.list = Lista de inversores
+master.menu.administrator.investor.create = Crear inversor
 master.menu.administrator.shutdown = Parar el sistema
 
 # master.menu.authenticated ###################################################

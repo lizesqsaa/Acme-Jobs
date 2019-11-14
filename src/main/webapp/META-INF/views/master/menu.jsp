@@ -50,6 +50,10 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.customization" action="/administrator/customization/display"/>
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.investor.list" action="/administrator/investor/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.investor.create" action="/administrator/investor/create"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
 		</acme:menu-option>
 		
