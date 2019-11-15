@@ -39,7 +39,8 @@ master.menu.anonymous.investor = Investor list
 
 master.menu.administrator = Administrator
 master.menu.administrator.user-accounts = User accounts
-master.menu.administrator.announcement = Announcement list
+master.menu.administrator.announcement.list = Announcement list
+master.menu.administrator.announcement.create = Create an announcement
 master.menu.administrator.customization = Display Customization
 master.menu.administrator.shutdown = Shut down
 

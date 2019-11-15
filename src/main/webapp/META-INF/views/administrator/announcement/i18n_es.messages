@@ -17,4 +17,8 @@ administrator.announcement.form.label.moment = Momento
 administrator.announcement.form.label.moreInfo	= Información adicional
 administrator.announcement.form.label.text	= Texto descriptivo
 
+administrator.announcement.form.button.create = Crear
+administrator.announcement.form.button.update = Actualizar
+administrator.announcement.form.button.delete = Borrar
+
 administrator.announcement.form.button.return = Volver
