@@ -39,7 +39,8 @@ master.menu.anonymous.investor = Lista de inversores
 
 master.menu.administrator = Administrador
 master.menu.administrator.user-accounts = Cuentas de usuarios
-master.menu.administrator.announcement = Lista de anuncios
+master.menu.administrator.announcement.list = Lista de anuncios
+master.menu.administrator.announcement.create = Crear un anuncio
 master.menu.administrator.customization = Mostrar personalización
 master.menu.administrator.company-record.list = Lista de empresas
 master.menu.administrator.company-record.create = Crear una empresa
@@ -59,6 +60,7 @@ master.menu.authenticated.challenge = Lista de retos
 
 master.menu.provider = Proveedor
 master.menu.provider.favourite-link = Enlace favorito
+master.menu.provider.request.create = Crear solicitud
 
 # master.menu.consumer ##########################################################
 
