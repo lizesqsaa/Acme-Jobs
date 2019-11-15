@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.request_;
+package acme.features.authenticated.request;
 
 import java.util.Collection;
 

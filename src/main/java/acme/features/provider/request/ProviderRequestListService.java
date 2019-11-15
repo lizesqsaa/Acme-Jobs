@@ -1,5 +1,5 @@
 /*
- * AuthenticatedAcmeRequestShowService.java
+ * AuthenticatedAcmeRequestListService.java
  *
  * Copyright (c) 2019 Aureliano Piqueras, based on Rafael Corchuelo's DP Starter project.
  *
@@ -10,21 +10,23 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.request;
+package acme.features.provider.request;
+
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.requests.Request;
+import acme.entities.roles.Provider;
 import acme.framework.components.Model;
-import acme.framework.entities.Authenticated;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedRequestShowService implements AbstractShowService<Authenticated, Request> {
+public class ProviderRequestListService implements AbstractListService<Provider, Request> {
 
 	@Autowired
-	private AuthenticatedRequestRepository repository;
+	private ProviderRequestRepository repository;
 
 
 	@Override
@@ -43,11 +45,10 @@ public class AuthenticatedRequestShowService implements AbstractShowService<Auth
 	}
 
 	@Override
-	public Request findOne(final acme.framework.components.Request<Request> request) {
-		Request result;
-		int id;
-		id = request.getModel().getInteger("id");
-		result = this.repository.findRequestById(id);
+	public Collection<Request> findMany(final acme.framework.components.Request<Request> request) {
+		assert request != null;
+		Collection<Request> result;
+		result = this.repository.findMany();
 		return result;
 	}
 

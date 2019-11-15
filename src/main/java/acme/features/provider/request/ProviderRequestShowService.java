@@ -10,21 +10,21 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.request;
+package acme.features.provider.request;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.requests.Request;
+import acme.entities.roles.Provider;
 import acme.framework.components.Model;
-import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedRequestShowService implements AbstractShowService<Authenticated, Request> {
+public class ProviderRequestShowService implements AbstractShowService<Provider, Request> {
 
 	@Autowired
-	private AuthenticatedRequestRepository repository;
+	private ProviderRequestRepository repository;
 
 
 	@Override
