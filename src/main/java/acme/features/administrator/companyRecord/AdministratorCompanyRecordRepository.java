@@ -1,5 +1,5 @@
 
-package acme.features.anonymous.companyRecord;
+package acme.features.administrator.companyRecord;
 
 import java.util.Collection;
 
@@ -10,16 +10,11 @@ import acme.entities.companyRecords.CompanyRecord;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AnonymousCompanyRecordRepository extends AbstractRepository {
-
-	//poner la incial de la clase
-	@Query("select c from CompanyRecord c")
-	Collection<CompanyRecord> findMany();
+public interface AdministratorCompanyRecordRepository extends AbstractRepository {
 
 	@Query("select c from CompanyRecord c where c.id = ?1")
 	CompanyRecord findCompanyRecordById(int id);
 
-	//	@Query("select c from CompanyRecord c where c.stars = ?1")
-	//	CompanyRecord find ;
-
+	@Query("select c from CompanyRecord c")
+	Collection<CompanyRecord> findMany();
 }

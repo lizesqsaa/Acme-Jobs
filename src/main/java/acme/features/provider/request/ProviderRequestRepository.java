@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.request_;
+package acme.features.provider.request;
 
 import java.util.Collection;
 
@@ -21,12 +21,15 @@ import acme.entities.requests.Request;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AuthenticatedRequestRepository extends AbstractRepository {
+public interface ProviderRequestRepository extends AbstractRepository {
 
 	@Query("select req from Request req where req.id = ?1")
 	Request findRequestById(int id);
 
 	@Query("select req from Request req")
 	Collection<Request> findMany();
+
+	@Query("select req from Request req where req.ticker =?1")
+	Object findOneRequestByTicker(String ticker);
 
 }

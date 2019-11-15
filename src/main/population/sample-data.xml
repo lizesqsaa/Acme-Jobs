@@ -101,12 +101,12 @@
 	  <property name="ceo" value=" Manuel Morales Gil"/>
 	  <property name="description" value=" bussiness intelligence"/>
 	  <property name="website" value=" http://acme.es " />
-	  <property name="phone" value="+666(9999)55555555"/>
+	  <property name="phone" value="+666 (9999) 55555555"/>
 	  <property name="email" value="acme@company.com"/>
-	  <property name="isInc" value="true"/> 
+      <property name="isInc" value="false"/>  
 	  <property name="starNumber" value="3"/>
 	   
-	 </bean>
+ 	 </bean>
 	  
 	 <bean id= "record 2" class="acme.entities.companyRecords.CompanyRecord" >
 	  <property name="name" value=" Companyus, LLC"/>
@@ -114,9 +114,9 @@
 	  <property name="ceo" value=" Lizseth Esquen Saavedra "/>
 	  <property name="description" value=" ERP, CRM, Business Intelligence "/>
 	  <property name="website" value=" http://companyus.es " />
-	  <property name="phone" value="+456(1299)75585595"/>
+	  <property name="phone" value="+456 (1299) 75585595"/>
 	  <property name="email" value="cus@empresa.com"/>
-	  <property name="isInc" value="false"/> 
+	  <property name="isInc" value="true"/> 
 	  <property name="starNumber" value="5"/>
 	   
 	 </bean>
@@ -128,9 +128,9 @@
 	  <property name="ceo" value=" Juan Roma Po "/>
 	  <property name="description" value=" ERP, CRM, Business Intelligence "/>
 	  <property name="website" value=" http://aloha.es " />
-	  <property name="phone" value="+492(1231)76582595"/>
+	  <property name="phone" value="+492 (1231) 76582595"/>
 	  <property name="email" value="aloha@empresa.com"/>
-	  <property name="isInc" value="false"/> 
+	  <property name="isInc" value="false"/>
 	  <property name="starNumber" value="5"/>
 	   
 	 </bean>
