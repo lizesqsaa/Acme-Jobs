@@ -58,6 +58,7 @@ master.menu.authenticated.challenge = Challenge list
 
 master.menu.provider = Provider
 master.menu.provider.favourite-link = Favourite link
+master.menu.provider.request.create = Request create
 
 # master.menu.consumer ##########################################################
 

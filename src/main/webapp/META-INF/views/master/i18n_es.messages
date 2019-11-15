@@ -57,6 +57,7 @@ master.menu.authenticated.challenge = Lista de retos
 
 master.menu.provider = Proveedor
 master.menu.provider.favourite-link = Enlace favorito
+master.menu.provider.request.create = Crear solicitud
 
 # master.menu.consumer ##########################################################
 
