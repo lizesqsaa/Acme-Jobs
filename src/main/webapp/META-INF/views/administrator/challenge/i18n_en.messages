@@ -33,3 +33,5 @@ administrator.challenge.list.label.bronzeReward = Bronze Reward
 administrator.challenge.form.button.create = Create
 administrator.challenge.form.button.update = Update
 administrator.challenge.form.button.delete = Delete
+
+errors.challenge.create.deadline = The date must be in the future

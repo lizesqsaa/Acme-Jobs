@@ -77,7 +77,7 @@ public class AdministratorChallengeCreateService implements AbstractCreateServic
 			isAfter = false;
 		}
 
-		errors.state(request, isAfter, "Challenge.deadline", "Deadline is not future, you must to put in future");
+		errors.state(request, isAfter, "deadline", "errors.challenge.create.deadline", "Deadline is not future, you must to put in future");
 	}
 
 	@Override
