@@ -42,6 +42,8 @@ master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.announcement.list = Announcement list
 master.menu.administrator.announcement.create = Create an announcement
 master.menu.administrator.customization = Display Customization
+master.menu.administrator.company-record.list = Company list
+master.menu.administrator.company-record.create = Create a company
 master.menu.administrator.shutdown = Shut down
 
 # master.menu.authenticated ###################################################

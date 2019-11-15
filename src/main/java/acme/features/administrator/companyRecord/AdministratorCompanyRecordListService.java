@@ -1,5 +1,7 @@
 
-package acme.features.authenticated.companyRecord;
+package acme.features.administrator.companyRecord;
+
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,14 +9,14 @@ import org.springframework.stereotype.Service;
 import acme.entities.companyRecords.CompanyRecord;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
-import acme.framework.services.AbstractShowService;
+import acme.framework.entities.Administrator;
+import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedCompanyRecordShowService implements AbstractShowService<Authenticated, CompanyRecord> {
+public class AdministratorCompanyRecordListService implements AbstractListService<Administrator, CompanyRecord> {
 
 	@Autowired
-	private AuthenticatedCompanyRecordRepository repository;
+	private AdministratorCompanyRecordRepository repository;
 
 
 	@Override
@@ -28,17 +30,15 @@ public class AuthenticatedCompanyRecordShowService implements AbstractShowServic
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		//falta "isInc"
 		request.unbind(entity, model, "name", "sector", "ceo", "description", "website", "phone", "email", "isInc", "starNumber");
-
 	}
 
 	@Override
-	public CompanyRecord findOne(final Request<CompanyRecord> request) {
+	public Collection<CompanyRecord> findMany(final Request<CompanyRecord> request) {
 		assert request != null;
-		CompanyRecord result;
-		int id;
-		id = request.getModel().getInteger("id");
-		result = this.repository.findCompanyRecordById(id);
+		Collection<CompanyRecord> result;
+		result = this.repository.findMany();
 		return result;
 	}
 

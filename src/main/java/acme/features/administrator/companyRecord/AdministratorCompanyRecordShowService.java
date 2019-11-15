@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.companyRecord;
+package acme.features.administrator.companyRecord;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,14 +7,14 @@ import org.springframework.stereotype.Service;
 import acme.entities.companyRecords.CompanyRecord;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
+import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedCompanyRecordShowService implements AbstractShowService<Authenticated, CompanyRecord> {
+public class AdministratorCompanyRecordShowService implements AbstractShowService<Administrator, CompanyRecord> {
 
 	@Autowired
-	private AuthenticatedCompanyRecordRepository repository;
+	private AdministratorCompanyRecordRepository repository;
 
 
 	@Override
