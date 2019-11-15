@@ -17,11 +17,9 @@
 	<acme:form-textbox code="authenticated.company-record.form.label.description" path="description"/>
 	<acme:form-url code="authenticated.company-record.form.label.website" path="website"/>
 	<acme:form-textbox code="authenticated.company-record.form.label.email" path="email"/>
-	<acme:form-textbox code="authenticated.company-record.form.label.phone" path="phone"/>
-	 
+	<acme:form-textbox code="authenticated.company-record.form.label.phone" path="phone"/> 
 	<acme:form-checkbox code="authenticated.company-record.form.label.isInc" path="isInc"/> 
-	
 	<acme:form-textbox code="authenticated.company-record.form.label.starNumber" path="starNumber"/>
-
+	
   	<acme:form-return code="authenticated.company-record.form.button.return"/>
 </acme:form>
