@@ -440,8 +440,8 @@ Customization
       <w>385</w>
       <h>77</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Banner
+    <panel_attributes>/&lt;&lt;Entity&gt;&gt;/
+/Banner/
 --
 +picture: String{NotBlank,URL,Pattern(^(http(s?):)([/|.|\\w|\\s|-])*\\.(?:jpg|gif|png)$")}
 +slogan: String{NotBlank}
@@ -452,19 +452,15 @@ Banner
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>595</x>
+      <x>602</x>
       <y>854</y>
       <w>385</w>
-      <h>91</h>
+      <h>49</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Banner&gt;&gt;
 CommercialBanner
 --
-+creditCardNumber: String{NotBlank,CreditCardNumber}
-+holderName: String{NotBlank}
-+expirationMonthYear: String{NotBlank,Pattern(^(0[1-9]|1[0-2])\\/([0-9]{2})$)}
-+cvv: String{NotBlank,Pattern(^([0-9]{3,4})$)}
-</panel_attributes>
++creditCardNumber: String{NotBlank,CreditCardNumber}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -486,11 +482,11 @@ NonCommercialBanner
     <coordinates>
       <x>574</x>
       <y>770</y>
-      <w>168</w>
+      <w>175</w>
       <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;220.0;120.0</additional_attributes>
+    <additional_attributes>10.0;10.0;230.0;120.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>

@@ -20,11 +20,17 @@
 	<acme:form-url code="administrator.commercial-banner.form.label.picture" path="picture" placeholder="http://www.acme.com/imgfile[.jpg|.png|.gif]"/>
 	<acme:form-url code="administrator.commercial-banner.form.label.targetURL" path="targetURL" />
 	<acme:form-textarea code="administrator.commercial-banner.form.label.slogan" path="slogan" />
+	
 	<acme:form-panel code="administrator.commercial-banner.form.label.creditCard">
-	<acme:form-textbox code="administrator.commercial-banner.form.label.holderName" path="holderName" />
+	
 	<acme:form-textbox code="administrator.commercial-banner.form.label.creditCardNumber" path="creditCardNumber" />
+<%-- 	
+
+	<acme:form-textbox code="administrator.commercial-banner.form.label.holderName" path="holderName" />
 	<acme:form-textbox code="administrator.commercial-banner.form.label.expirationMonthYear" path="expirationMonthYear" placeholder="01/20"/>
-	<acme:form-textbox code="administrator.commercial-banner.form.label.cvv" path="cvv" placeholder="123"/>
+	<acme:form-textbox code="administrator.commercial-banner.form.label.cvv" path="cvv" placeholder="123"/> 
+	
+--%>
 	
 	</acme:form-panel>
 	
