@@ -34,4 +34,9 @@ administrator.challenge.form.button.create = Crear
 administrator.challenge.form.button.update = Actualizar
 administrator.challenge.form.button.delete = Borrar
 
-errors.challenge.create.deadline = La fecha debe estar en el futuro
+errors.challenge.deadline.future = La fecha debe estar en el futuro
+errors.challenge.reward.money.amount-positive = La cantidad debe ser positiva
+errors.challenge.reward.money.euro = La moneda tiene que ser el euro '€' / 'EUR'
+errors.challenge.goldReward.amount-major = La cantidad de oro debe ser mayor que la de plata y la de bronce
+errors.challenge.silverReward.amount-medium = La cantidad de plata debe ser mayor que la bronce y menor que la oro
+errors.challenge.bronzeReward.amount-minor = La cantidad del bronce debe ser menor que la de oro y la de plata
