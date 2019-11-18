@@ -147,7 +147,7 @@
        add constraint UK_ssc7d0vl7xqysfq2gp9hryv61 unique (`phone`);
 
     alter table `offer` 
-       add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
+       add constraint `UKcp4664f36sgqsd0ihmirt0w0` unique (`ticker`);
 
     alter table `request` 
        add constraint UK_9mxq3powq8tqctclj0fbi2nih unique (`ticker`);
