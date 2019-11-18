@@ -21,5 +21,19 @@
 	<acme:form-textarea code="administrator.customization.form.label.spamWords" path="spamWords" />
 
 	
+<%-- 	si se pone el codigo aqui el boton update aparece en el show
+	<acme:form-submit test="${command == 'show'}"
+	code="administrator.customization.form.button.update"
+	action="/administrator/customization/update"/>
+	
+	
+	
+	
+	<acme:form-submit test="${command == 'update'}"
+	code="administrator.customization.form.button.update"
+	action="/administrator/customization/update"/>
+	--%>
+	 
+	
   	<acme:form-return code="administrator.customization.form.button.return"/>
 </acme:form>

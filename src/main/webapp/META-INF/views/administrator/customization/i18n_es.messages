@@ -16,3 +16,5 @@ administrator.customization.form.button.return = Volver
 
 administrator.customization.list.label.spamThreshold = Límite Spam
 administrator.customization.list.label.spamWords = Palabras Spam
+
+administrator.customization.form.button.update = Actualizar
