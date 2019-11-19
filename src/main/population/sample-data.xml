@@ -101,12 +101,12 @@
 	  <property name="ceo" value=" Manuel Morales Gil"/>
 	  <property name="description" value=" bussiness intelligence"/>
 	  <property name="website" value=" http://acme.es " />
-	  <property name="phone" value="+666(9999)55555555"/>
+	  <property name="phone" value="+666 (9999) 55555555"/>
 	  <property name="email" value="acme@company.com"/>
-	  <property name="isInc" value="true"/> 
+      <property name="isInc" value="false"/>  
 	  <property name="starNumber" value="3"/>
 	   
-	 </bean>
+ 	 </bean>
 	  
 	 <bean id= "record 2" class="acme.entities.companyRecords.CompanyRecord" >
 	  <property name="name" value=" Companyus, LLC"/>
@@ -114,9 +114,9 @@
 	  <property name="ceo" value=" Lizseth Esquen Saavedra "/>
 	  <property name="description" value=" ERP, CRM, Business Intelligence "/>
 	  <property name="website" value=" http://companyus.es " />
-	  <property name="phone" value="+456(1299)75585595"/>
+	  <property name="phone" value="+456 (1299) 75585595"/>
 	  <property name="email" value="cus@empresa.com"/>
-	  <property name="isInc" value="false"/> 
+	  <property name="isInc" value="true"/> 
 	  <property name="starNumber" value="5"/>
 	   
 	 </bean>
@@ -128,9 +128,9 @@
 	  <property name="ceo" value=" Juan Roma Po "/>
 	  <property name="description" value=" ERP, CRM, Business Intelligence "/>
 	  <property name="website" value=" http://aloha.es " />
-	  <property name="phone" value="+492(1231)76582595"/>
+	  <property name="phone" value="+492 (1231) 76582595"/>
 	  <property name="email" value="aloha@empresa.com"/>
-	  <property name="isInc" value="false"/> 
+	  <property name="isInc" value="false"/>
 	  <property name="starNumber" value="5"/>
 	   
 	 </bean>
@@ -281,6 +281,64 @@
 			</bean>
 		</property>
 	</bean>
-  
+	
+		<!--Banners-->
+	<!-- CommercialBanners -->
+	<bean class="acme.entities.banners.CommercialBanner" id="cBanner1">
+		<property value="https://img.meccacola.com/banner1.jpg" name="picture"/>
+		<property value="The spark of life" name="slogan"/>
+		<property value="https://www.meccacola.com/" name="targetURL"/>
+		<property value="6432109876543210" name="creditCardNumber"/>
+		<!--  
+		<property value="John Pemberton" name="holderName"/>
+		<property value="12/20" name="expirationMonthYear"/>
+		<property value="123" name="cvv"/>
+		-->
+	</bean>
+	
+	<bean class="acme.entities.banners.CommercialBanner" id="cBanner2">
+		<property value="https://img.personcola.com/banner1.jpg" name="picture"/>
+		<property value="The person of life" name="slogan"/>
+		<property value="https://www.personcola.com/" name="targetURL"/>
+		<property value="6432109876543210" name="creditCardNumber"/>
+		<!--  
+		<property value="Johnny Person" name="holderName"/>
+		<property value="10/22" name="expirationMonthYear"/>
+		<property value="124" name="cvv"/>
+		-->
+	</bean>
+	
+	<bean class="acme.entities.banners.CommercialBanner" id="cBanner3">
+		<property value="https://img.fantum.com/banner1.jpg" name="picture"/>
+		<property value="The fantum of life" name="slogan"/>
+		<property value="https://www.fantum.com/" name="targetURL"/>
+		<property value="6432109876543210" name="creditCardNumber"/>
+		<!--  
+		<property value="Jimmy Fantum" name="holderName"/>
+		<property value="09/21" name="expirationMonthYear"/>
+		<property value="125" name="cvv"/>
+		-->
+	</bean>
+	<!-- NonCommercialBanners -->
+  	<bean class="acme.entities.banners.NonCommercialBanner" id="noncBanner1">
+		<property value="https://img.meccacola.com/banner1.jpg" name="picture"/>
+		<property value="The spark of life" name="slogan"/>
+		<property value="https://www.meccacola.com/" name="targetURL"/>
+		<property value="https://www.meccacola.com/jingle.mp3" name="jingle"/>
+	</bean>
+	
+	 <bean class="acme.entities.banners.NonCommercialBanner" id="noncBanner2">
+		<property value="https://img.personcola.com/banner1.jpg" name="picture"/>
+		<property value="The person of life" name="slogan"/>
+		<property value="https://www.personcola.com/" name="targetURL"/>
+		<property value="https://www.personcola.com/jingle.mp3" name="jingle"/>
+	</bean>
+	
+  	 <bean class="acme.entities.banners.NonCommercialBanner" id="noncBanner3">
+		<property value="https://img.fantum.com/banner1.jpg" name="picture"/>
+		<property value="The fantum of life" name="slogan"/>
+		<property value="https://www.fantum.com/" name="targetURL"/>
+		<property value="https://www.fantum.com/jingle.mp3" name="jingle"/>
+	</bean>
   
 </beans>

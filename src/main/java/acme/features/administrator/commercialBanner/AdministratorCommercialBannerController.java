@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.request_;
+package acme.features.administrator.commercialBanner;
 
 import javax.annotation.PostConstruct;
 
@@ -18,21 +18,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.requests.Request;
+import acme.entities.banners.CommercialBanner;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
-import acme.framework.entities.Authenticated;
+import acme.framework.entities.Administrator;
 
 @Controller
-@RequestMapping("/authenticated/request/")
-public class AuthenticatedRequestController extends AbstractController<Authenticated, Request> {
+@RequestMapping("/administrator/commercial-banner/")
+public class AdministratorCommercialBannerController extends AbstractController<Administrator, CommercialBanner> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedRequestListService	listService;
+	private AdministratorCommercialBannerListService	listService;
+
 	@Autowired
-	private AuthenticatedRequestShowService	showService;
+	private AdministratorCommercialBannerShowService	showService;
+
+	@Autowired
+	private AdministratorCommercialBannerCreateService	createService;
+
+	@Autowired
+	private AdministratorCommercialBannerUpdateService	updateService;
+
+	@Autowired
+	private AdministratorCommercialBannerDeleteService	deleteService;
 
 
 	// Constructors -----------------------------------------------------------
@@ -41,5 +51,8 @@ public class AuthenticatedRequestController extends AbstractController<Authentic
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 	}
 }

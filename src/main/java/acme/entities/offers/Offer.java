@@ -48,10 +48,9 @@ public class Offer extends DomainEntity {
 
 	@Valid
 	@NotNull
+	@Valid
 	private Money				amount;
 
-	@NotNull
-	//@Column(unique = true)
 	@Pattern(regexp = "^O[a-zA-Z]{4}-[0-9]{5}")
 	private String				ticker;
 

@@ -1,5 +1,5 @@
 /*
- * AuthenticatedAcmeRequestRepository.java
+ * AuthenticatedChallengeRepository.java
  *
  * Copyright (c) 2019 Aureliano Piqueras, based on Rafael Corchuelo's DP Starter project.
  *
@@ -10,23 +10,23 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.request_;
+package acme.features.administrator.challenge;
 
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.requests.Request;
+import acme.entities.challenges.Challenge;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AuthenticatedRequestRepository extends AbstractRepository {
+public interface AdministratorChallengeRepository extends AbstractRepository {
 
-	@Query("select req from Request req where req.id = ?1")
-	Request findRequestById(int id);
+	@Query("select req from Challenge req where req.id = ?1")
+	Challenge findChallengeById(int id);
 
-	@Query("select req from Request req")
-	Collection<Request> findMany();
+	@Query("select req from Challenge req")
+	Collection<Challenge> findMany();
 
 }
