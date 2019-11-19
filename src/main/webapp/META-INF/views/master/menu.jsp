@@ -56,6 +56,8 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.customization" action="/administrator/customization/display"/>
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.chart" action="/administrator/chart/show"/>
+			<acme:menu-separator/>
 
 			<acme:menu-suboption code="master.menu.administrator.investor.list" action="/administrator/investor/list"/>
 			<acme:menu-separator/>

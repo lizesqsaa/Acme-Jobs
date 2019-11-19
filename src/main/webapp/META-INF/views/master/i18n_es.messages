@@ -47,6 +47,7 @@ master.menu.administrator.customization = Mostrar personalización
 master.menu.administrator.investor.list = Lista de inversores
 master.menu.administrator.investor.create = Crear inversor
 master.menu.administrator.shutdown = Parar el sistema
+master.menu.administrator.chart = Gráficas
 
 # master.menu.authenticated ###################################################
 
