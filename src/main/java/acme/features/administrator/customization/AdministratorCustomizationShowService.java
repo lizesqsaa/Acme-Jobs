@@ -12,8 +12,6 @@
 
 package acme.features.administrator.customization;
 
-import java.text.DecimalFormat;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,12 +39,7 @@ public class AdministratorCustomizationShowService implements AbstractShowServic
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "spamWords");
-		DecimalFormat numberFormat = new DecimalFormat("#.00");
-		StringBuilder spamThresholdPercent = new StringBuilder();
-		spamThresholdPercent.append(numberFormat.format(entity.getSpamThreshold()));
-		spamThresholdPercent.append("%");
-		model.setAttribute("spamThresholdPercent", spamThresholdPercent.toString());
+		request.unbind(entity, model, "spamWords", "spamThreshold", "activeID");
 
 	}
 
@@ -54,9 +47,7 @@ public class AdministratorCustomizationShowService implements AbstractShowServic
 	public Customization findOne(final Request<Customization> request) {
 		assert request != null;
 		Customization result;
-		int id;
-		id = request.getModel().getInteger("id");
-		result = this.repository.findCustomizationById(id);
+		result = this.repository.findMain();
 		return result;
 	}
 

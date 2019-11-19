@@ -1,5 +1,5 @@
 /*
- * AdministratorAcmeRequestListService.java
+ * AuthenticatedAcmeRequestListService.java
  *
  * Copyright (c) 2019 Aureliano Piqueras, based on Rafael Corchuelo's DP Starter project.
  *
@@ -10,51 +10,46 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.administrator.customization;
+package acme.features.administrator.commercialBanner;
 
-import java.text.DecimalFormat;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.customizations.Customization;
+import acme.entities.banners.CommercialBanner;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AdministratorCustomizationListService implements AbstractListService<Administrator, Customization> {
+public class AdministratorCommercialBannerListService implements AbstractListService<Administrator, CommercialBanner> {
 
 	@Autowired
-	private AdministratorCustomizationRepository repository;
+	private AdministratorCommercialBannerRepository repository;
 
 
 	@Override
-	public boolean authorise(final Request<Customization> request) {
+	public boolean authorise(final Request<CommercialBanner> request) {
 		assert request != null;
 		return true;
 	}
 
 	@Override
-	public void unbind(final Request<Customization> request, final Customization entity, final Model model) {
+	public void unbind(final Request<CommercialBanner> request, final CommercialBanner entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "spamWords");
-		DecimalFormat numberFormat = new DecimalFormat("#.00");
-		StringBuilder spamThresholdPercent = new StringBuilder();
-		spamThresholdPercent.append(numberFormat.format(entity.getSpamThreshold()));
-		spamThresholdPercent.append("%");
-		model.setAttribute("spamThresholdPercent", spamThresholdPercent.toString());
-
+		request.unbind(entity, model, "picture", "slogan", "targetURL", "creditCardNumber"
+		//			,"holderName", "expirationMonthYear", "cvv"
+		);
 	}
 
 	@Override
-	public Collection<Customization> findMany(final Request<Customization> request) {
+	public Collection<CommercialBanner> findMany(final Request<CommercialBanner> request) {
 		assert request != null;
-		Collection<Customization> result;
+		Collection<CommercialBanner> result;
 		result = this.repository.findMany();
 		return result;
 	}
