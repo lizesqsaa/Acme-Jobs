@@ -46,7 +46,6 @@ public class Offer extends DomainEntity {
 	@NotBlank
 	private String				descriptionText;
 
-	@Valid
 	@NotNull
 	@Valid
 	private Money				amount;

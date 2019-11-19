@@ -1,20 +1,20 @@
 
-package acme.features.authenticated.offer;
+package acme.features.consumer.offer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.offers.Offer;
+import acme.entities.roles.Consumer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedOfferShowService implements AbstractShowService<Authenticated, Offer> {
+public class ConsumerOfferShowService implements AbstractShowService<Consumer, Offer> {
 
 	@Autowired
-	private AuthenticatedOfferRepository repository;
+	private ConsumerOfferRepository repository;
 
 
 	@Override
@@ -39,7 +39,7 @@ public class AuthenticatedOfferShowService implements AbstractShowService<Authen
 		Offer result;
 		int id;
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneById(id);
+		result = this.repository.findOfferById(id);
 		return result;
 	}
 
