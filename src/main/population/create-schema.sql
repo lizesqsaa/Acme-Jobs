@@ -173,7 +173,7 @@
     insert into `hibernate_sequence` values ( 1 );
 
     alter table `offer` 
-       add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
+       add constraint `UKcp4664f36sgqsd0ihmirt0w0` unique (`ticker`);
 
     alter table `request` 
        add constraint `UKh9syauj4iixf18uts83saik5d` unique (`ticker`);

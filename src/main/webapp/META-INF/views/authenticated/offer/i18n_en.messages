@@ -14,3 +14,5 @@ authenticated.offer.form.label.ticker = Ticker
 authenticated.offer.form.button.return = Return
 
 master.menu.user-account.offer= Offers
+
+authenticated.offer.form.button.create= Create

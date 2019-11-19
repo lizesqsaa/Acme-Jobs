@@ -39,7 +39,7 @@ public class AuthenticatedOfferShowService implements AbstractShowService<Authen
 		Offer result;
 		int id;
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneById(id);
+		result = this.repository.findOfferById(id);
 		return result;
 	}
 

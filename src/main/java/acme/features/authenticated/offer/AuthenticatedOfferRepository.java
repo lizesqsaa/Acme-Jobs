@@ -13,9 +13,12 @@ import acme.framework.repositories.AbstractRepository;
 public interface AuthenticatedOfferRepository extends AbstractRepository {
 
 	@Query("select o from Offer o where o.id=?1")
-	Offer findOneById(int id);
+	Offer findOfferById(int id);
 
 	@Query("select o from Offer o")
-	Collection<Offer> findManyAll();
+	Collection<Offer> findMany();
+
+	@Query("select o from Offer o where o.ticker =?1")
+	Object findOneOfferByTicker(String ticker);
 
 }
