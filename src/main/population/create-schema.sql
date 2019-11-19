@@ -30,6 +30,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `banner` (
+       `id` integer not null,
+        `version` integer not null,
+        `picture` varchar(255),
+        `slogan` varchar(255),
+        `targeturl` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `challenge` (
        `id` integer not null,
         `version` integer not null,
@@ -45,6 +54,16 @@
         `silver_reward_amount` double precision,
         `silver_reward_currency` varchar(255),
         `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `commercial_banner` (
+       `id` integer not null,
+        `version` integer not null,
+        `picture` varchar(255),
+        `slogan` varchar(255),
+        `targeturl` varchar(255),
+        `credit_card_number` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -87,6 +106,16 @@
         `investor_name` varchar(255),
         `sector` varchar(255),
         `stars_number` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `non_commercial_banner` (
+       `id` integer not null,
+        `version` integer not null,
+        `picture` varchar(255),
+        `slogan` varchar(255),
+        `targeturl` varchar(255),
+        `jingle` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -147,7 +176,7 @@
        add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
 
     alter table `request` 
-       add constraint UK_9mxq3powq8tqctclj0fbi2nih unique (`ticker`);
+       add constraint `UKh9syauj4iixf18uts83saik5d` unique (`ticker`);
 
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
