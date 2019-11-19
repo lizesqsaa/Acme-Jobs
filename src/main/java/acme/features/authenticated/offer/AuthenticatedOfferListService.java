@@ -38,7 +38,7 @@ public class AuthenticatedOfferListService implements AbstractListService<Authen
 	public Collection<Offer> findMany(final Request<Offer> request) {
 		assert request != null;
 		Collection<Offer> result;
-		result = this.repository.findMany();
+		result = this.repository.findManyAll();
 		return result;
 	}
 

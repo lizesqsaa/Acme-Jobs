@@ -1,20 +1,22 @@
 
-package acme.features.authenticated.offer;
+package acme.features.consumer.offer;
+
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.offers.Offer;
+import acme.entities.roles.Consumer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedOfferShowService implements AbstractShowService<Authenticated, Offer> {
+public class ConsumerOfferListService implements AbstractListService<Consumer, Offer> {
 
 	@Autowired
-	private AuthenticatedOfferRepository repository;
+	ConsumerOfferRepository repository;
 
 
 	@Override
@@ -28,18 +30,15 @@ public class AuthenticatedOfferShowService implements AbstractShowService<Authen
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-
 		request.unbind(entity, model, "title", "creationMoment", "limitDate", "descriptionText", "amount", "ticker");
 
 	}
 
 	@Override
-	public Offer findOne(final Request<Offer> request) {
+	public Collection<Offer> findMany(final Request<Offer> request) {
 		assert request != null;
-		Offer result;
-		int id;
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOneById(id);
+		Collection<Offer> result;
+		result = this.repository.findMany();
 		return result;
 	}
 

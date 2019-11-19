@@ -20,7 +20,7 @@
 		<acme:form-moment code="consumer.offer.form.label.creationMoment" path="creationMoment" readonly='true'/>
 	</jstl:if>
 	
-	<acme:form-textbox code="consumer.offer.form.label.ticker" path="ticker" placeholder="RABCD-1234" />
+	<acme:form-textbox code="consumer.offer.form.label.ticker" path="ticker" placeholder="OABCD-12345" />
 	
 	<acme:form-textbox code="consumer.offer.form.label.title" path="title" />
 	<acme:form-moment code="consumer.offer.form.label.limitDate" path="limitDate" />
