@@ -54,8 +54,7 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.challenge.create" action="/administrator/challenge/create"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.administrator.customization.display" action="/administrator/customization/display"/>
-			<acme:menu-suboption code="master.menu.administrator.customization.update" action="/administrator/customization/update"/>
+			<acme:menu-suboption code="master.menu.administrator.customization.show" action="/administrator/customization/show"/>
 			<acme:menu-separator/>
 
 			<acme:menu-suboption code="master.menu.administrator.investor.list" action="/administrator/investor/list"/>

@@ -62,7 +62,10 @@ public class AdministratorCustomizationUpdateService implements AbstractUpdateSe
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
+		if (!errors.hasErrors("spamWords")) {
+			boolean okEndWords = !entity.getSpamWords().endsWith(" ") || !entity.getSpamWords().endsWith(",") || !entity.getSpamWords().endsWith(", ");
+			errors.state(request, okEndWords, "spamWords", "errors.administrator.customization.spamWords.wrongEndWords", "End with blank space or comma not valid");
+		}
 	}
 
 	@Override
