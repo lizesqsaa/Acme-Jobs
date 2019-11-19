@@ -8,13 +8,14 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-administrator.customization.form.label.spamThreshold = Spam Threshold:
+administrator.customization.form.label.spamThreshold = Spam Threshold %:
 administrator.customization.form.label.spamWords = Spam Words:
 
 	
 administrator.customization.form.button.return = Return
 
-administrator.customization.list.label.spamThreshold = Spam Threshold
+administrator.customization.list.label.spamThreshold = Spam Threshold %
 administrator.customization.list.label.spamWords = Spam Words
 
 administrator.customization.form.button.update = Update
+administrator.customization.error.no-inline = Text not valid 

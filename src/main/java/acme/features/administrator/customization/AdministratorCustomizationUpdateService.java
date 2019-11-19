@@ -42,7 +42,7 @@ public class AdministratorCustomizationUpdateService implements AbstractUpdateSe
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "spamThreshold", "spamWords");
+		request.unbind(entity, model, "spamThreshold", "spamWords", "activeID");
 
 	}
 
@@ -51,10 +51,8 @@ public class AdministratorCustomizationUpdateService implements AbstractUpdateSe
 		assert request != null;
 
 		Customization result;
-		int id;
 
-		id = request.getModel().getInteger("id");
-		result = this.repository.findCustomizationById(id);
+		result = this.repository.findMain();
 
 		return result;
 	}
@@ -64,6 +62,7 @@ public class AdministratorCustomizationUpdateService implements AbstractUpdateSe
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
 	}
 
 	@Override
