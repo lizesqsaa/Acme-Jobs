@@ -14,6 +14,6 @@ authenticated.offer.form.label.amount = Cantidad
 authenticated.offer.form.label.ticker = Ticker
 authenticated.offer.form.button.return = Volver
 
-master.menu.user-account.offer= Ofertas
+
 
 authenticated.offer.form.button.create= Crear

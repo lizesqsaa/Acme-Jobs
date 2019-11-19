@@ -16,9 +16,11 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="consumer.offer.list.label.ticker" path="ticker" width="30%"/>
-	<acme:list-column code="consumer.offer.list.label.creationMoment" path="creationMoment" width="30%"/>
 	<acme:list-column code="consumer.offer.list.label.title" path="title" width="40%"/>
+	<acme:list-column code="consumer.offer.list.label.ticker" path="ticker" width="30%"/>
+	<acme:list-column code="consumer.offer.list.label.minAmount" path="minAmount" width="30%"/>
+	<acme:list-column code="consumer.offer.list.label.maxAmount" path="maxAmount" width="30%"/>
+	
 </acme:list>
 
 

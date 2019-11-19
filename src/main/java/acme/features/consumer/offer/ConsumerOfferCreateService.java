@@ -42,7 +42,7 @@ public class ConsumerOfferCreateService implements AbstractCreateService<Consume
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "creationMoment", "limitDate", "creationMoment", "descriptionText", "amount", "ticker");
+		request.unbind(entity, model, "title", "creationMoment", "limitDate", "creationMoment", "descriptionText", "minAmount", "maxAmount", "ticker");
 	}
 
 	@Override
@@ -66,24 +66,44 @@ public class ConsumerOfferCreateService implements AbstractCreateService<Consume
 		assert entity != null;
 		assert errors != null;
 
-		boolean isDuplicated, isAccepted, isFuture, isPositive, isEuro;
+		boolean isDuplicated, isAccepted, isFuture, isEuro;
 		Date today = new Date(System.currentTimeMillis() - 1);
 
-		isDuplicated = this.repository.findOneOfferByTicker(entity.getTicker()) != null;
-		errors.state(request, !isDuplicated, "ticker", "authenticated.offer.error.duplicated");
+		if (!errors.hasErrors("ticker")) {
+			isDuplicated = this.repository.findOneOfferByTicker(entity.getTicker()) != null;
+			errors.state(request, !isDuplicated, "ticker", "consumer.offer.error.duplicated");
+		}
 
-		isAccepted = request.getModel().getBoolean("accept");
-		errors.state(request, isAccepted, "accept", "authenticated.offer.error.must-accept");
+		if (!errors.hasErrors("accept")) {
+			isAccepted = request.getModel().getBoolean("accept");
+			errors.state(request, isAccepted, "accept", "consumer.offer.error.must-accept");
+		}
 
-		isFuture = entity.getLimitDate().after(today);
-		errors.state(request, isFuture, "limitDate", "authenticated.offer.error.no-future");
+		if (!errors.hasErrors("limitDate")) {
+			isFuture = entity.getLimitDate().after(today);
+			errors.state(request, isFuture, "limitDate", "consumer.offer.error.no-future");
 
-		isPositive = entity.getAmount().getAmount() > 0;
-		errors.state(request, isPositive, "reward", "authenticated.offer.error.negative-amount");
+		}
 
-		isEuro = entity.getAmount().getCurrency().equals("EUR") || entity.getAmount().getCurrency().equals("€");
-		errors.state(request, isEuro, "amount", "authenticated.offer.error.no-euro");
+		if (!errors.hasErrors("minAmount")) {
+			isEuro = entity.getMinAmount().getCurrency().equals("EUR") || entity.getMinAmount().getCurrency().equals("€");
+			errors.state(request, isEuro, "minAmount", "consumer.offer.error.no-euro");
+		}
 
+		if (!errors.hasErrors("maxAmount")) {
+			isEuro = entity.getMaxAmount().getCurrency().equals("EUR") || entity.getMaxAmount().getCurrency().equals("€");
+			errors.state(request, isEuro, "maxAmount", "consumer.offer.error.no-euro");
+		}
+
+		if (!errors.hasErrors("minAmount")) {
+			isEuro = entity.getMinAmount().getAmount() < entity.getMaxAmount().getAmount();
+			errors.state(request, isEuro, "minAmount", "consumer.offer.error.smaller");
+		}
+
+		if (!errors.hasErrors("maxAmount")) {
+			isEuro = entity.getMinAmount().getAmount() < entity.getMaxAmount().getAmount();
+			errors.state(request, isEuro, "minAmount", "consumer.offer.error.bigger");
+		}
 	}
 
 	@Override
