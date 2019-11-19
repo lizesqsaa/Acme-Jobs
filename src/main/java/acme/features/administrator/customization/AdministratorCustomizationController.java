@@ -18,7 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.components.CustomCommand;
 import acme.entities.customizations.Customization;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
@@ -31,11 +30,9 @@ public class AdministratorCustomizationController extends AbstractController<Adm
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AdministratorCustomizationUpdateService		updateService;
+	private AdministratorCustomizationUpdateService	updateService;
 	@Autowired
-	private AdministratorCustomizationShowService		showService;
-	@Autowired
-	private AdministratorCustomizationDisplayService	displayService;
+	private AdministratorCustomizationShowService	showService;
 
 
 	// Constructors -----------------------------------------------------------
@@ -44,6 +41,5 @@ public class AdministratorCustomizationController extends AbstractController<Adm
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-		super.addCustomCommand(CustomCommand.DISPLAY, BasicCommand.SHOW, this.displayService);
 	}
 }

@@ -428,7 +428,7 @@ Announcement
 Customization
 --
 + spamThreshold: Double {NotNull,Digits(integer = 3, fraction = 2),@Min(0),@Max(100)}
-+ spamWords: String {NotBlank, Pattern(^(\\S+(\\s\\S+)*(,\\S)*)*$)}
++ spamWords: String {NotBlank, Pattern(^(.+?)(?:,|$)$)}
 </panel_attributes>
     <additional_attributes/>
   </element>
