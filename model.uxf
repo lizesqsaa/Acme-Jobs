@@ -421,14 +421,14 @@ Announcement
     <coordinates>
       <x>861</x>
       <y>259</y>
-      <w>350</w>
+      <w>427</w>
       <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Customization
 --
 + spamThreshold: Double {NotNull,Digits(integer = 3, fraction = 2),@Min(0),@Max(100)}
-+ spamWords: String {NotBlank}
++ spamWords: String {NotBlank, Pattern(^(\\S+(\\s\\S+)*(,\\S)*)*$)}
 </panel_attributes>
     <additional_attributes/>
   </element>
