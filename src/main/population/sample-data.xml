@@ -289,11 +289,10 @@
 		<property value="The spark of life" name="slogan"/>
 		<property value="https://www.meccacola.com/" name="targetURL"/>
 		<property value="6432109876543210" name="creditCardNumber"/>
-		<!--  
 		<property value="John Pemberton" name="holderName"/>
-		<property value="12/20" name="expirationMonthYear"/>
+		<property value="12" name="expirationMonth"/>
+		<property value="2020" name="expirationYear"/>
 		<property value="123" name="cvv"/>
-		-->
 	</bean>
 	
 	<bean class="acme.entities.banners.CommercialBanner" id="cBanner2">
@@ -301,11 +300,10 @@
 		<property value="The person of life" name="slogan"/>
 		<property value="https://www.personcola.com/" name="targetURL"/>
 		<property value="6432109876543210" name="creditCardNumber"/>
-		<!--  
 		<property value="Johnny Person" name="holderName"/>
-		<property value="10/22" name="expirationMonthYear"/>
+		<property value="10" name="expirationMonth"/>
+		<property value="2021" name="expirationYear"/>
 		<property value="124" name="cvv"/>
-		-->
 	</bean>
 	
 	<bean class="acme.entities.banners.CommercialBanner" id="cBanner3">
@@ -313,11 +311,11 @@
 		<property value="The fantum of life" name="slogan"/>
 		<property value="https://www.fantum.com/" name="targetURL"/>
 		<property value="6432109876543210" name="creditCardNumber"/>
-		<!--  
 		<property value="Jimmy Fantum" name="holderName"/>
-		<property value="09/21" name="expirationMonthYear"/>
+		<property value="09" name="expirationMonth"/>
+		<property value="2022" name="expirationYear"/>
 		<property value="125" name="cvv"/>
-		-->
+
 	</bean>
 	<!-- NonCommercialBanners -->
   	<bean class="acme.entities.banners.NonCommercialBanner" id="noncBanner1">

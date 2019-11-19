@@ -1,6 +1,9 @@
 
 package acme.features.administrator.commercialBanner;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -43,9 +46,7 @@ public class AdministratorCommercialBannerUpdateService implements AbstractUpdat
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "picture", "slogan", "targetURL", "creditCardNumber"
-		//			,"holderName", "expirationMonthYear", "cvv"
-		);
+		request.unbind(entity, model, "picture", "slogan", "targetURL", "creditCardNumber", "holderName", "expirationYear", "expirationMonth", "cvv");
 	}
 
 	@Override
@@ -66,6 +67,25 @@ public class AdministratorCommercialBannerUpdateService implements AbstractUpdat
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		if (!errors.hasErrors()) {
+			boolean isNotExpiredYear, isNotExpired;
+			Calendar today, expCalendar;
+			Integer year, month, day;
+			year = entity.getExpirationYear();
+			month = entity.getExpirationMonth() - 1;
+			day = Calendar.getInstance().getActualMaximum(Calendar.DAY_OF_MONTH);
+			today = new GregorianCalendar();
+			expCalendar = new GregorianCalendar();
+			expCalendar.set(year, month, day);
+			Integer todayYear = today.get(Calendar.YEAR);
+			isNotExpiredYear = todayYear <= year;
+			errors.state(request, isNotExpiredYear, "expirationYear", "administrator.commercial-banner.expirationYear.expired");
+			if (isNotExpiredYear) {
+				isNotExpired = expCalendar.after(today);
+				errors.state(request, isNotExpired, "expirationMonth", "administrator.commercial-banner.expirationMonth.expired");
+			}
+
+		}
 	}
 
 	@Override

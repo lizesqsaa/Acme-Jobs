@@ -17,20 +17,19 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-url code="administrator.commercial-banner.form.label.picture" path="picture" placeholder="http://www.acme.com/imgfile[.jpg|.png|.gif]"/>
+	<acme:form-url code="administrator.commercial-banner.form.label.picture" path="picture"/>
 	<acme:form-url code="administrator.commercial-banner.form.label.targetURL" path="targetURL" />
 	<acme:form-textarea code="administrator.commercial-banner.form.label.slogan" path="slogan" />
 	
 	<acme:form-panel code="administrator.commercial-banner.form.label.creditCard">
 	
-	<acme:form-textbox code="administrator.commercial-banner.form.label.creditCardNumber" path="creditCardNumber" />
-<%-- 	
+	<acme:form-textbox code="administrator.commercial-banner.form.label.creditCardNumber" path="creditCardNumber" />	
 
 	<acme:form-textbox code="administrator.commercial-banner.form.label.holderName" path="holderName" />
-	<acme:form-textbox code="administrator.commercial-banner.form.label.expirationMonthYear" path="expirationMonthYear" placeholder="01/20"/>
-	<acme:form-textbox code="administrator.commercial-banner.form.label.cvv" path="cvv" placeholder="123"/> 
-	
---%>
+	<acme:form-integer code="administrator.commercial-banner.form.label.expirationMonth" path="expirationMonth" placeholder="01"/> 
+	<acme:form-integer code="administrator.commercial-banner.form.label.expirationYear" path="expirationYear" placeholder="2019"/>
+	<acme:form-textbox code="administrator.commercial-banner.form.label.cvv" path="cvv" placeholder="1234"/> 
+
 	
 	</acme:form-panel>
 	

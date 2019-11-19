@@ -23,10 +23,10 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorCommercialBannerRepository extends AbstractRepository {
 
-	@Query("select req from CommercialBanner req where req.id = ?1")
+	@Query("select cb from CommercialBanner cb where cb.id = ?1")
 	CommercialBanner findCommercialBannerById(int id);
 
-	@Query("select req from CommercialBanner req")
+	@Query("select cb from CommercialBanner cb")
 	Collection<CommercialBanner> findMany();
 
 }
