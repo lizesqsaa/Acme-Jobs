@@ -66,15 +66,17 @@ public class ConsumerOfferCreateService implements AbstractCreateService<Consume
 		assert entity != null;
 		assert errors != null;
 
+		//		if (!errors.hasErrors("errors")) {
 		boolean isDuplicated, isAccepted, isFuture, isPositive, isEuro;
 		Date today = new Date(System.currentTimeMillis() - 1);
 
 		isDuplicated = this.repository.findOneOfferByTicker(entity.getTicker()) != null;
 		errors.state(request, !isDuplicated, "ticker", "authenticated.offer.error.duplicated");
 
-		isAccepted = request.getModel().getBoolean("accept");
-		errors.state(request, isAccepted, "accept", "authenticated.offer.error.must-accept");
-
+		if (!errors.hasErrors("accept")) {
+			isAccepted = request.getModel().getBoolean("accept");
+			errors.state(request, isAccepted, "accept", "authenticated.offer.error.must-accept");
+		}
 		isFuture = entity.getLimitDate().after(today);
 		errors.state(request, isFuture, "limitDate", "authenticated.offer.error.no-future");
 
@@ -85,7 +87,7 @@ public class ConsumerOfferCreateService implements AbstractCreateService<Consume
 		errors.state(request, isEuro, "amount", "authenticated.offer.error.no-euro");
 
 	}
-
+	//	}
 	@Override
 	public void create(final Request<Offer> request, final Offer entity) {
 		assert request != null;

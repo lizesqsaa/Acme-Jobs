@@ -94,6 +94,7 @@
     create table `customization` (
        `id` integer not null,
         `version` integer not null,
+        `activeid` integer,
         `spam_threshold` double precision,
         `spam_words` varchar(255),
         primary key (`id`)
@@ -171,6 +172,9 @@
     ) engine=InnoDB;
 
     insert into `hibernate_sequence` values ( 1 );
+
+    alter table `customization` 
+       add constraint `UK1i2pxu5xiyd2tkwo83784r4l0` unique (`activeid`);
 
     alter table `offer` 
        add constraint `UKcp4664f36sgqsd0ihmirt0w0` unique (`ticker`);
