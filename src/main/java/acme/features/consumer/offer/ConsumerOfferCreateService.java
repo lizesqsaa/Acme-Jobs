@@ -73,6 +73,7 @@ public class ConsumerOfferCreateService implements AbstractCreateService<Consume
 		assert entity != null;
 		assert errors != null;
 
+
 		boolean isDuplicated, isFuture, isEuro, isAccepted;
 		Date today = new Date(System.currentTimeMillis() - 1);
 
@@ -109,8 +110,9 @@ public class ConsumerOfferCreateService implements AbstractCreateService<Consume
 			isEuro = entity.getMinAmount().getAmount() < entity.getMaxAmount().getAmount();
 			errors.state(request, isEuro, "minAmount", "consumer.offer.error.bigger");
 		}
-	}
 
+	}
+	//	}
 	@Override
 	public void create(final Request<Offer> request, final Offer entity) {
 		assert request != null;

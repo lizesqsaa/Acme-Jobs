@@ -5,10 +5,12 @@ consumer.offer.list.label.amount= Amount
 consumer.offer.list.label.creationMoment= Creation Moment
 consumer.offer.list.label.ticker= Ticker
 
+
 consumer.offer.form.label.title = Title
 consumer.offer.form.label.creationMoment = Creation Moment
 consumer.offer.form.label.limitDate = Deadline
 consumer.offer.form.label.descriptionText = Description Text
+
 consumer.offer.form.label.minAmount = Minimum salary
 consumer.offer.form.label.maxAmount = Maximum salary 
 consumer.offer.form.label.ticker = Ticker
@@ -34,3 +36,4 @@ consumer.offer.error.duplicated= Ticker must be unique
 
 consumer.offer.list.label.maxAmount= Maximum salary
 consumer.offer.list.label.minAmount= Minimum salary
+

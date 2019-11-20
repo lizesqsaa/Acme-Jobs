@@ -47,7 +47,8 @@ public class Customization extends DomainEntity {
 	private Double				spamThreshold;
 
 	@NotBlank
-	@Pattern(regexp = "^(\\S+(\\s\\S+)*(,\\S)*)*$")
+	//	@Pattern(regexp = "^(\\S+(\\s\\S+)*(,\\S)*)*$")
+	@Pattern(regexp = "^(.+?)(?:,|$)$")
 	private String				spamWords;
 
 	@NotNull

@@ -31,8 +31,6 @@
 	<jstl:if test="${command=='create' }">
 		<acme:form-submit code="consumer.offer.form.button.create" action="/consumer/offer/create"/>
 	</jstl:if>
-	
-	
-	
+		
   	<acme:form-return code="consumer.offer.form.button.return"/>
 </acme:form>
