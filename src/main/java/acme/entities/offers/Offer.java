@@ -8,6 +8,7 @@ import javax.persistence.Index;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -46,11 +47,11 @@ public class Offer extends DomainEntity {
 	private String				descriptionText;
 
 	@NotNull
-	//@Valid
+	@Valid
 	private Money				minAmount;
 
 	@NotNull
-	//@Valid
+	@Valid
 	private Money				maxAmount;
 
 	@NotNull
