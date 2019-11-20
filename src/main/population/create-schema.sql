@@ -30,6 +30,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `banner` (
+       `id` integer not null,
+        `version` integer not null,
+        `picture` varchar(255),
+        `slogan` varchar(255),
+        `targeturl` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `challenge` (
        `id` integer not null,
         `version` integer not null,
@@ -45,6 +54,16 @@
         `silver_reward_amount` double precision,
         `silver_reward_currency` varchar(255),
         `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `commercial_banner` (
+       `id` integer not null,
+        `version` integer not null,
+        `picture` varchar(255),
+        `slogan` varchar(255),
+        `targeturl` varchar(255),
+        `credit_card_number` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -75,6 +94,7 @@
     create table `customization` (
        `id` integer not null,
         `version` integer not null,
+        `activeid` integer,
         `spam_threshold` double precision,
         `spam_words` varchar(255),
         primary key (`id`)
@@ -90,14 +110,26 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `non_commercial_banner` (
+       `id` integer not null,
+        `version` integer not null,
+        `picture` varchar(255),
+        `slogan` varchar(255),
+        `targeturl` varchar(255),
+        `jingle` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `offer` (
        `id` integer not null,
         `version` integer not null,
-        `amount_amount` double precision,
-        `amount_currency` varchar(255),
         `creation_moment` datetime(6),
         `description_text` varchar(255),
         `limit_date` datetime(6),
+        `max_amount_amount` double precision,
+        `max_amount_currency` varchar(255),
+        `min_amount_amount` double precision,
+        `min_amount_currency` varchar(255),
         `ticker` varchar(255),
         `title` varchar(255),
         primary key (`id`)
@@ -143,8 +175,11 @@
 
     insert into `hibernate_sequence` values ( 1 );
 
+    alter table `customization` 
+       add constraint `UK1i2pxu5xiyd2tkwo83784r4l0` unique (`activeid`);
+
     alter table `offer` 
-       add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
+       add constraint `UKcp4664f36sgqsd0ihmirt0w0` unique (`ticker`);
 
     alter table `request` 
        add constraint `UKh9syauj4iixf18uts83saik5d` unique (`ticker`);

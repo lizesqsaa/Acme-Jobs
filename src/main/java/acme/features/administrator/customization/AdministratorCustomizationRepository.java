@@ -29,4 +29,7 @@ public interface AdministratorCustomizationRepository extends AbstractRepository
 	@Query("select cus from Customization cus")
 	Collection<Customization> findMany();
 
+	@Query("select cus from Customization cus where cus.activeID=1")
+	Customization findMain();
+
 }

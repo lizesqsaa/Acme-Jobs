@@ -1,4 +1,5 @@
 
+
 package acme.entities.offers;
 
 import java.util.Date;
@@ -7,7 +8,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -41,8 +41,12 @@ public class Offer extends DomainEntity {
 	private String				descriptionText;
 
 	@NotNull
-	@Valid
-	private Money				amount;
+	//@Valid
+	private Money				minAmount;
+
+	@NotNull
+	//@Valid
+	private Money				maxAmount;
 
 	@NotBlank
 	@Column(unique = true)
@@ -50,3 +54,4 @@ public class Offer extends DomainEntity {
 	private String				ticker;
 
 }
+

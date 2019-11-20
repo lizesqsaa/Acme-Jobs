@@ -26,6 +26,7 @@ public class AuthenticatedOfferController extends AbstractController<Authenticat
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+
 	}
 
 }

@@ -43,11 +43,18 @@ master.menu.administrator.user-accounts = Cuentas de usuarios
 master.menu.administrator.announcement = Lista de anuncios
 master.menu.administrator.challenge.list = Lista de retos
 master.menu.administrator.challenge.create = Crear un reto
-master.menu.administrator.customization = Mostrar personalización
+master.menu.administrator.customization.show = Mostrar personalización
 master.menu.administrator.investor.list = Lista de inversores
 master.menu.administrator.investor.create = Crear inversor
 master.menu.administrator.shutdown = Parar el sistema
+
 master.menu.administrator.chart = Gráficas
+
+master.menu.administrator.commercial-banner.list = Lista de Banners Comerciales
+master.menu.administrator.commercial-banner.create = Crear Banner Commercial
+master.menu.administrator.non-commercial-banner.list = Lista de Banners No Comerciales
+master.menu.administrator.non-commercial-banner.create = Crear Banner No Comerciales
+
 
 # master.menu.authenticated ###################################################
 

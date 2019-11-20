@@ -156,7 +156,10 @@
 	  <property name="creationMoment" value="2002/06/06 00:10"/>
 	  <property name="limitDate" value="2022/06/06 00:00"/>
 	  <property name="descriptionText" value="New great job offer in IBM"/>
-	  <property name="amount" value="30000.00 €"/>
+	  <property name="minAmount" value="30000.00 €"/>
+
+	  <property name="maxAmount" value="32000.00 €"/>
+
 	  <property name="ticker" value="OAAAA-99999"/>
 	</bean>
 	
@@ -165,7 +168,10 @@
 	  <property name="creationMoment" value="2018/06/06 13:00"/>
 	  <property name="limitDate" value="2028/06/07 15:00"/>
 	  <property name="descriptionText" value="New great job offer in Microsoft"/>
-	  <property name="amount" value="31000.00 €"/>
+	  <property name="minAmount" value="31000.00 €"/>
+
+	  	  <property name="maxAmount" value="33000.00 €"/>
+
 	  <property name="ticker" value="OAAAA-99990"/>
 	</bean>
 	
@@ -174,7 +180,10 @@
 	  <property name="creationMoment" value="2018/06/06 00:03"/>
 	  <property name="limitDate" value="2020/06/11 22:00"/>
 	  <property name="descriptionText" value="Google need Data analysts"/>
-	  <property name="amount" value="40000.00 €"/>
+	  <property name="minAmount" value="40000.00 €"/>
+
+	    <property name="maxAmount" value="45000.00 €"/>
+
 	  <property name="ticker" value="OAAAA-99998"/>
 	</bean>
 	
@@ -183,7 +192,10 @@
 	  <property name="creationMoment" value="2002/06/06 01:00"/>
 	  <property name="limitDate" value="2021/06/08 10:00"/>
 	  <property name="descriptionText" value="Hooli need you"/>
-	  <property name="amount" value="50000.00 €"/>
+
+	  <property name="minAmount" value="50000.00 €"/>
+
+	  <property name="maxAmount" value="59000.00 €"/>
 	  <property name="ticker" value="OAAAA-00000"/>
 	</bean>
   
@@ -294,6 +306,64 @@
 			</bean>
 		</property>
 	</bean>
-  
+	
+		<!--Banners-->
+	<!-- CommercialBanners -->
+	<bean class="acme.entities.banners.CommercialBanner" id="cBanner1">
+		<property value="https://img.meccacola.com/banner1.jpg" name="picture"/>
+		<property value="The spark of life" name="slogan"/>
+		<property value="https://www.meccacola.com/" name="targetURL"/>
+		<property value="6432109876543210" name="creditCardNumber"/>
+		<!--  
+		<property value="John Pemberton" name="holderName"/>
+		<property value="12/20" name="expirationMonthYear"/>
+		<property value="123" name="cvv"/>
+		-->
+	</bean>
+	
+	<bean class="acme.entities.banners.CommercialBanner" id="cBanner2">
+		<property value="https://img.personcola.com/banner1.jpg" name="picture"/>
+		<property value="The person of life" name="slogan"/>
+		<property value="https://www.personcola.com/" name="targetURL"/>
+		<property value="6432109876543210" name="creditCardNumber"/>
+		<!--  
+		<property value="Johnny Person" name="holderName"/>
+		<property value="10/22" name="expirationMonthYear"/>
+		<property value="124" name="cvv"/>
+		-->
+	</bean>
+	
+	<bean class="acme.entities.banners.CommercialBanner" id="cBanner3">
+		<property value="https://img.fantum.com/banner1.jpg" name="picture"/>
+		<property value="The fantum of life" name="slogan"/>
+		<property value="https://www.fantum.com/" name="targetURL"/>
+		<property value="6432109876543210" name="creditCardNumber"/>
+		<!--  
+		<property value="Jimmy Fantum" name="holderName"/>
+		<property value="09/21" name="expirationMonthYear"/>
+		<property value="125" name="cvv"/>
+		-->
+	</bean>
+	<!-- NonCommercialBanners -->
+  	<bean class="acme.entities.banners.NonCommercialBanner" id="noncBanner1">
+		<property value="https://img.meccacola.com/banner1.jpg" name="picture"/>
+		<property value="The spark of life" name="slogan"/>
+		<property value="https://www.meccacola.com/" name="targetURL"/>
+		<property value="https://www.meccacola.com/jingle.mp3" name="jingle"/>
+	</bean>
+	
+	 <bean class="acme.entities.banners.NonCommercialBanner" id="noncBanner2">
+		<property value="https://img.personcola.com/banner1.jpg" name="picture"/>
+		<property value="The person of life" name="slogan"/>
+		<property value="https://www.personcola.com/" name="targetURL"/>
+		<property value="https://www.personcola.com/jingle.mp3" name="jingle"/>
+	</bean>
+	
+  	 <bean class="acme.entities.banners.NonCommercialBanner" id="noncBanner3">
+		<property value="https://img.fantum.com/banner1.jpg" name="picture"/>
+		<property value="The fantum of life" name="slogan"/>
+		<property value="https://www.fantum.com/" name="targetURL"/>
+		<property value="https://www.fantum.com/jingle.mp3" name="jingle"/>
+	</bean>
   
 </beans>
