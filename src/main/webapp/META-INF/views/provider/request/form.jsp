@@ -17,10 +17,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<jstl:if test="${command!='create' }">
-		<acme:form-moment code="provider.request.form.label.creationMoment" path="creationMoment" readonly='true'/>
-	</jstl:if>
-	
+
 	<acme:form-textbox code="provider.request.form.label.ticker" path="ticker" placeholder="RABCD-1234" />
 	
 	<acme:form-textbox code="provider.request.form.label.title" path="title" />
@@ -31,8 +28,6 @@
 	<jstl:if test="${command=='create' }">
 		<acme:form-submit code="provider.request.form.button.create" action="/provider/request/create"/>
 	</jstl:if>
-	
-	
-	
+
   	<acme:form-return code="provider.request.form.button.return"/>
 </acme:form>

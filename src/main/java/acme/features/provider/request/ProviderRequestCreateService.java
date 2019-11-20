@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.requests.Request;
 import acme.entities.roles.Provider;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.services.AbstractCreateService;
 
@@ -44,7 +45,6 @@ public class ProviderRequestCreateService implements AbstractCreateService<Provi
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
 		request.bind(entity, errors);
 	}
 
@@ -54,6 +54,11 @@ public class ProviderRequestCreateService implements AbstractCreateService<Provi
 		assert entity != null;
 		assert model != null;
 		request.unbind(entity, model, "title", "creationMoment", "deadline", "text", "reward", "ticker");
+		if (request.isMethod(HttpMethod.GET)) {
+			model.setAttribute("accept", "false");
+		} else {
+			request.transfer(model, "accept");
+		}
 
 	}
 
@@ -75,23 +80,27 @@ public class ProviderRequestCreateService implements AbstractCreateService<Provi
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
-		boolean isDuplicated, isAccepted, isFuture, isPositive, isEuro;
+		boolean isDuplicated, isFuture, isPositive, isEuro, isAccepted;
 		Date today = new Date(System.currentTimeMillis() - 1);
-		isDuplicated = this.repository.findOneRequestByTicker(entity.getTicker()) != null;
-		errors.state(request, !isDuplicated, "ticker", "provider.request.error.duplicated");
 
 		isAccepted = request.getModel().getBoolean("accept");
 		errors.state(request, isAccepted, "accept", "provider.request.error.must-accept");
 
-		isFuture = entity.getDeadline().after(today);
-		errors.state(request, isFuture, "deadline", "provider.request.error.no-future");
+		if (!errors.hasErrors("ticker")) {
+			isDuplicated = this.repository.findOneRequestByTicker(entity.getTicker()) != null;
+			errors.state(request, !isDuplicated, "ticker", "provider.request.error.duplicated");
+		}
+		if (!errors.hasErrors("deadline")) {
+			isFuture = entity.getDeadline().after(today);
+			errors.state(request, isFuture, "deadline", "provider.request.error.no-future");
+		}
+		if (!errors.hasErrors("reward")) {
+			isPositive = entity.getReward().getAmount() > 0;
+			errors.state(request, isPositive, "reward", "provider.request.error.negative-amount");
 
-		isPositive = entity.getReward().getAmount() > 0;
-		errors.state(request, isPositive, "reward", "provider.request.error.negative-amount");
-
-		isEuro = entity.getReward().getCurrency().equals("EUR") || entity.getReward().getCurrency().equals("€");
-		errors.state(request, isEuro, "reward", "provider.request.error.no-euro");
+			isEuro = entity.getReward().getCurrency().equals("EUR") || entity.getReward().getCurrency().equals("€");
+			errors.state(request, isEuro, "reward", "provider.request.error.no-euro");
+		}
 
 	}
 
