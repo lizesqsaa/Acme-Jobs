@@ -1,4 +1,5 @@
 
+
 package acme.entities.offers;
 
 import java.util.Date;
@@ -53,3 +54,4 @@ public class Offer extends DomainEntity {
 	private String				ticker;
 
 }
+

@@ -43,7 +43,7 @@ master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.announcement = Announcement list
 master.menu.administrator.challenge.list = Challenge list
 master.menu.administrator.challenge.create = Create a challenge
-master.menu.administrator.customization = Display Customization
+master.menu.administrator.customization.show = Customization Display
 master.menu.administrator.investor.list = Investor list
 master.menu.administrator.investor.create = Create investor
 master.menu.administrator.shutdown = Shut down
@@ -187,6 +187,7 @@ master.menu.provider.request.create = Request create
 
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
+master.menu.consumer.offer.create = Offer create
 
 # master.menu.user-account ####################################################
 
