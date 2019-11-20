@@ -17,15 +17,11 @@ import acme.framework.controllers.AbstractController;
 public class ConsumerOfferController extends AbstractController<Consumer, Offer> {
 
 	@Autowired
-	private ConsumerOfferListService	listService;
-
-	@Autowired
-	private ConsumerOfferCreateService	createService;
+	private ConsumerOfferCreateService createService;
 
 
 	@PostConstruct
 	private void initialise() {
-		super.addBasicCommand(BasicCommand.LIST, this.listService);
 
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 	}
