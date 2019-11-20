@@ -144,7 +144,9 @@
 	  <property name="limitDate" value="2022/06/06 00:00"/>
 	  <property name="descriptionText" value="New great job offer in IBM"/>
 	  <property name="minAmount" value="30000.00 €"/>
-	  <property name="maxAmount" value="31000.00 €"/>
+
+	  <property name="maxAmount" value="32000.00 €"/>
+
 	  <property name="ticker" value="OAAAA-99999"/>
 	</bean>
 	
@@ -154,7 +156,9 @@
 	  <property name="limitDate" value="2028/06/07 15:00"/>
 	  <property name="descriptionText" value="New great job offer in Microsoft"/>
 	  <property name="minAmount" value="31000.00 €"/>
-	  <property name="maxAmount" value="32000.00 €"/>
+
+	  	  <property name="maxAmount" value="33000.00 €"/>
+
 	  <property name="ticker" value="OAAAA-99990"/>
 	</bean>
 	
@@ -164,7 +168,9 @@
 	  <property name="limitDate" value="2020/06/11 22:00"/>
 	  <property name="descriptionText" value="Google need Data analysts"/>
 	  <property name="minAmount" value="40000.00 €"/>
-	  <property name="maxAmount" value="42000.00 €"/>
+
+	    <property name="maxAmount" value="45000.00 €"/>
+
 	  <property name="ticker" value="OAAAA-99998"/>
 	</bean>
 	
@@ -173,7 +179,9 @@
 	  <property name="creationMoment" value="2002/06/06 01:00"/>
 	  <property name="limitDate" value="2021/06/08 10:00"/>
 	  <property name="descriptionText" value="Hooli need you"/>
-	  <property name="minAmount" value="52000.00 €"/>
+
+	  <property name="minAmount" value="50000.00 €"/>
+
 	  <property name="maxAmount" value="59000.00 €"/>
 	  <property name="ticker" value="OAAAA-00000"/>
 	</bean>
