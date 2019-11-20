@@ -55,7 +55,8 @@ public class CompanyRecord extends DomainEntity {
 	@Max(5)
 	private Integer				starNumber;
 
-	// Derived attributes -----------------------------------------------------
-
-	// Relationships ----------------------------------------------------------
 }
+
+// Derived attributes -----------------------------------------------------
+
+// Relationships ----------------------------------------------------------

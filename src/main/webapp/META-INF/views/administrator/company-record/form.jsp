@@ -17,7 +17,7 @@
 	<acme:form-textbox code="administrator.company-record.form.label.description" path="description"/>
 	<acme:form-url code="administrator.company-record.form.label.website" path="website"/>
 	<acme:form-textbox code="administrator.company-record.form.label.email" path="email"/>
-	<acme:form-textbox code="administrator.company-record.form.label.phone" path="phone"/>	 
+	<acme:form-textbox code="administrator.company-record.form.label.phone" path="phone" placeholder= "+492 (1231) 76582595"/>	 
 	<acme:form-checkbox code="administrator.company-record.form.label.isInc" path="isInc"/>
 	<acme:form-textbox code="administrator.company-record.form.label.starNumber" path="starNumber"/>
   	 

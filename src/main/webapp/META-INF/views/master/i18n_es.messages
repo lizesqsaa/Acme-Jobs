@@ -49,6 +49,8 @@ master.menu.administrator.investor.create = Crear inversor
 master.menu.administrator.shutdown = Parar el sistema
 
 master.menu.administrator.chart = Gráficas
+master.menu.administrator.dashboard = Panel
+
 
 master.menu.administrator.commercial-banner.list = Lista de Banners Comerciales
 master.menu.administrator.commercial-banner.create = Crear Banner Comercial

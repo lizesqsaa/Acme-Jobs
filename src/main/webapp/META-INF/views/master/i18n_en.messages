@@ -49,6 +49,7 @@ master.menu.administrator.investor.create = Create investor
 master.menu.administrator.shutdown = Shut down
 
 master.menu.administrator.chart = Charts
+master.menu.administrator.dashboard = Dashboard
 
 master.menu.administrator.commercial-banner.list = Commercial Banner List
 master.menu.administrator.commercial-banner.create = Commercial Banner Create

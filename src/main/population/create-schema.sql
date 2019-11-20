@@ -30,15 +30,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `banner` (
-       `id` integer not null,
-        `version` integer not null,
-        `picture` varchar(255),
-        `slogan` varchar(255),
-        `targeturl` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `challenge` (
        `id` integer not null,
         `version` integer not null,
@@ -64,6 +55,10 @@
         `slogan` varchar(255),
         `targeturl` varchar(255),
         `credit_card_number` varchar(255),
+        `cvv` integer,
+        `expiration_month` integer,
+        `expiration_year` integer,
+        `holder_name` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -179,7 +174,7 @@
        add constraint `UK1i2pxu5xiyd2tkwo83784r4l0` unique (`activeid`);
 
     alter table `offer` 
-       add constraint `UKcp4664f36sgqsd0ihmirt0w0` unique (`ticker`);
+       add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
 
     alter table `request` 
        add constraint `UKh9syauj4iixf18uts83saik5d` unique (`ticker`);
