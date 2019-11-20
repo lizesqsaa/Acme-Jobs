@@ -13,7 +13,8 @@
 	</jstl:if>
 	<acme:form-moment code="authenticated.offer.form.label.limitDate" path="limitDate"/>
 	<acme:form-textbox code="authenticated.offer.form.label.descriptionText" path="descriptionText"/>
-	<acme:form-money code="authenticated.offer.form.label.amount" path="amount"/>
+	<acme:form-money code="authenticated.offer.form.label.minAmount" path="minAmount"/>
+	<acme:form-money code="authenticated.offer.form.label.maxAmount" path="maxAmount"/>
 	<acme:form-textbox code="authenticated.offer.form.label.ticker" path="ticker"/>
 	<acme:form-checkbox code="authenticated.offer.form.label.accept" path="accept"/>
 	

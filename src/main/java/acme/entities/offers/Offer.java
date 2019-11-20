@@ -8,7 +8,6 @@ import javax.persistence.Index;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -47,10 +46,15 @@ public class Offer extends DomainEntity {
 	private String				descriptionText;
 
 	@NotNull
-	@Valid
-	private Money				amount;
+	//@Valid
+	private Money				minAmount;
 
-	@Pattern(regexp = "^O[a-zA-Z]{4}-[0-9]{5}")
+	@NotNull
+	//@Valid
+	private Money				maxAmount;
+
+	@NotNull
+	@Pattern(regexp = "^O[a-zA-Z]{4}-[0-9]{5}$")
 	private String				ticker;
 
 }

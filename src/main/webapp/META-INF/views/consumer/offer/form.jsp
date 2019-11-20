@@ -25,7 +25,8 @@
 	<acme:form-textbox code="consumer.offer.form.label.title" path="title" />
 	<acme:form-moment code="consumer.offer.form.label.limitDate" path="limitDate" />
 	<acme:form-textarea code="consumer.offer.form.label.descriptionText" path="descriptionText" />
-	<acme:form-money code="consumer.offer.form.label.amount" path="amount" />
+	<acme:form-money code="consumer.offer.form.label.minAmount" path="minAmount" />
+	<acme:form-money code="consumer.offer.form.label.maxAmount" path="maxAmount" />
 	<acme:form-checkbox code="consumer.offer.form.label.accept" path="accept"/>
 	<jstl:if test="${command=='create' }">
 		<acme:form-submit code="consumer.offer.form.button.create" action="/consumer/offer/create"/>

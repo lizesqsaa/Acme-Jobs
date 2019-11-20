@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.offers.Offer;
 import acme.entities.roles.Consumer;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractCreateService;
@@ -42,7 +43,13 @@ public class ConsumerOfferCreateService implements AbstractCreateService<Consume
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "creationMoment", "limitDate", "creationMoment", "descriptionText", "amount", "ticker");
+		request.unbind(entity, model, "title", "creationMoment", "limitDate", "creationMoment", "descriptionText", "minAmount", "maxAmount", "ticker");
+
+		if (request.isMethod(HttpMethod.GET)) {
+			model.setAttribute("accept", "false");
+		} else {
+			request.transfer(model, "accept");
+		}
 	}
 
 	@Override
@@ -66,25 +73,43 @@ public class ConsumerOfferCreateService implements AbstractCreateService<Consume
 		assert entity != null;
 		assert errors != null;
 
-		//		if (!errors.hasErrors("errors")) {
-		boolean isDuplicated, isAccepted, isFuture, isPositive, isEuro;
+
+		boolean isDuplicated, isFuture, isEuro, isAccepted;
 		Date today = new Date(System.currentTimeMillis() - 1);
 
-		isDuplicated = this.repository.findOneOfferByTicker(entity.getTicker()) != null;
-		errors.state(request, !isDuplicated, "ticker", "authenticated.offer.error.duplicated");
+		isAccepted = request.getModel().getBoolean("accept");
+		errors.state(request, isAccepted, "accept", "provider.request.error.must-accept");
 
-		if (!errors.hasErrors("accept")) {
-			isAccepted = request.getModel().getBoolean("accept");
-			errors.state(request, isAccepted, "accept", "authenticated.offer.error.must-accept");
+		if (!errors.hasErrors("ticker")) {
+			isDuplicated = this.repository.findOneOfferByTicker(entity.getTicker()) != null;
+			errors.state(request, !isDuplicated, "ticker", "consumer.offer.error.duplicated");
 		}
-		isFuture = entity.getLimitDate().after(today);
-		errors.state(request, isFuture, "limitDate", "authenticated.offer.error.no-future");
 
-		isPositive = entity.getAmount().getAmount() > 0;
-		errors.state(request, isPositive, "reward", "authenticated.offer.error.negative-amount");
+		if (!errors.hasErrors("limitDate")) {
+			isFuture = entity.getLimitDate().after(today);
+			errors.state(request, isFuture, "limitDate", "consumer.offer.error.no-future");
 
-		isEuro = entity.getAmount().getCurrency().equals("EUR") || entity.getAmount().getCurrency().equals("€");
-		errors.state(request, isEuro, "amount", "authenticated.offer.error.no-euro");
+		}
+
+		if (!errors.hasErrors("minAmount")) {
+			isEuro = entity.getMinAmount().getCurrency().equals("EUR") || entity.getMinAmount().getCurrency().equals("€");
+			errors.state(request, isEuro, "minAmount", "consumer.offer.error.no-euro");
+		}
+
+		if (!errors.hasErrors("maxAmount")) {
+			isEuro = entity.getMaxAmount().getCurrency().equals("EUR") || entity.getMaxAmount().getCurrency().equals("€");
+			errors.state(request, isEuro, "maxAmount", "consumer.offer.error.no-euro");
+		}
+
+		if (!errors.hasErrors("minAmount")) {
+			isEuro = entity.getMinAmount().getAmount() < entity.getMaxAmount().getAmount();
+			errors.state(request, isEuro, "minAmount", "consumer.offer.error.smaller");
+		}
+
+		if (!errors.hasErrors("maxAmount")) {
+			isEuro = entity.getMinAmount().getAmount() < entity.getMaxAmount().getAmount();
+			errors.state(request, isEuro, "minAmount", "consumer.offer.error.bigger");
+		}
 
 	}
 	//	}

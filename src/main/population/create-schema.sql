@@ -123,11 +123,13 @@
     create table `offer` (
        `id` integer not null,
         `version` integer not null,
-        `amount_amount` double precision,
-        `amount_currency` varchar(255),
         `creation_moment` datetime(6),
         `description_text` varchar(255),
         `limit_date` datetime(6),
+        `max_amount_amount` double precision,
+        `max_amount_currency` varchar(255),
+        `min_amount_amount` double precision,
+        `min_amount_currency` varchar(255),
         `ticker` varchar(255),
         `title` varchar(255),
         primary key (`id`)
