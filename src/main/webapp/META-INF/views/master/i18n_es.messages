@@ -34,6 +34,8 @@ master.menu.anonymous.favourite-link = Link favorito
 master.menu.anonymous.announcement = Lista de anuncios
 master.menu.anonymous.company-record = Lista de empresas
 master.menu.anonymous.investor = Lista de inversores
+master.menu.anonymous.company-record.top = Principales empresas
+master.menu.anonymous.investor.top = Principales inversores
 
 
 # master.menu.administrator ###################################################

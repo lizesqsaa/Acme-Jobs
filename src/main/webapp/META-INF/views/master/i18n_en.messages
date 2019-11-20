@@ -34,6 +34,8 @@ master.menu.anonymous.favourite-link = Favourite link
 master.menu.anonymous.announcement = Announcement list
 master.menu.anonymous.company-record = Company list
 master.menu.anonymous.investor = Investor list
+master.menu.anonymous.company-record.top = Top companies
+master.menu.anonymous.investor.top = Top investors
 
 
 # master.menu.administrator ###################################################
