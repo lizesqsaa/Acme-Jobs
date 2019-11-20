@@ -69,14 +69,12 @@ public class ConsumerOfferCreateService implements AbstractCreateService<Consume
 		boolean isDuplicated, isAccepted, isFuture, isEuro;
 		Date today = new Date(System.currentTimeMillis() - 1);
 
+		isAccepted = request.getModel().getBoolean("accept");
+		errors.state(request, isAccepted, "accept", "consumer.offer.error.must-accept");
+
 		if (!errors.hasErrors("ticker")) {
 			isDuplicated = this.repository.findOneOfferByTicker(entity.getTicker()) != null;
 			errors.state(request, !isDuplicated, "ticker", "consumer.offer.error.duplicated");
-		}
-
-		if (!errors.hasErrors("accept")) {
-			isAccepted = request.getModel().getBoolean("accept");
-			errors.state(request, isAccepted, "accept", "consumer.offer.error.must-accept");
 		}
 
 		if (!errors.hasErrors("limitDate")) {
