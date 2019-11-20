@@ -2,8 +2,10 @@
 package acme.entities.banners;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
 
@@ -17,20 +19,26 @@ public class CommercialBanner extends Banner {
 
 	private static final long	serialVersionUID	= 1L;
 
-	@Size(min = 16, max = 16)
-	@Digits(fraction = 0, integer = 16)
+	@NotBlank
 	@CreditCardNumber
 	private String				creditCardNumber;
 
-	//	@NotBlank
-	//	private String				holderName;
-	//
-	//	@NotBlank
-	//	@Pattern(regexp = "^(0[1-9]|1[0-2])\\/([0-9]{2})$")
-	//	private String				expirationMonthYear;
-	//
-	//	@NotBlank
-	//	@Pattern(regexp = "^([0-9]{3,4})$")
-	//	private String				cvv;
+	@NotBlank
+	private String				holderName;
+
+	@NotNull
+	@Min(1)
+	@Max(12)
+	private Integer				expirationMonth;
+
+	@NotNull
+	@Min(0)
+	@Max(9999)
+	private Integer				expirationYear;
+
+	@NotNull
+	@Min(1)
+	@Max(9999)
+	private Integer				cvv;
 
 }

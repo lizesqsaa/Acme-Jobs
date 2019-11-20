@@ -51,9 +51,9 @@ master.menu.administrator.shutdown = Parar el sistema
 master.menu.administrator.chart = Gráficas
 
 master.menu.administrator.commercial-banner.list = Lista de Banners Comerciales
-master.menu.administrator.commercial-banner.create = Crear Banner Commercial
+master.menu.administrator.commercial-banner.create = Crear Banner Comercial
 master.menu.administrator.non-commercial-banner.list = Lista de Banners No Comerciales
-master.menu.administrator.non-commercial-banner.create = Crear Banner No Comerciales
+master.menu.administrator.non-commercial-banner.create = Crear Banner No Comercial
 
 
 # master.menu.authenticated ###################################################
