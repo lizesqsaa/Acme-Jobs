@@ -44,7 +44,6 @@ public class ProviderRequestCreateService implements AbstractCreateService<Provi
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
 		request.bind(entity, errors);
 	}
 
@@ -75,23 +74,26 @@ public class ProviderRequestCreateService implements AbstractCreateService<Provi
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		boolean isDuplicated, isFuture, isPositive, isEuro, isAccepted;
 
-		boolean isDuplicated, isAccepted, isFuture, isPositive, isEuro;
-		Date today = new Date(System.currentTimeMillis() - 1);
-		isDuplicated = this.repository.findOneRequestByTicker(entity.getTicker()) != null;
-		errors.state(request, !isDuplicated, "ticker", "provider.request.error.duplicated");
+		if (!errors.hasErrors()) {
+
+			Date today = new Date(System.currentTimeMillis() - 1);
+			isDuplicated = this.repository.findOneRequestByTicker(entity.getTicker()) != null;
+			errors.state(request, !isDuplicated, "ticker", "provider.request.error.duplicated");
+
+			isFuture = entity.getDeadline().after(today);
+			errors.state(request, isFuture, "deadline", "provider.request.error.no-future");
+
+			isPositive = entity.getReward().getAmount() > 0;
+			errors.state(request, isPositive, "reward", "provider.request.error.negative-amount");
+
+			isEuro = entity.getReward().getCurrency().equals("EUR") || entity.getReward().getCurrency().equals("€");
+			errors.state(request, isEuro, "reward", "provider.request.error.no-euro");
+		}
 
 		isAccepted = request.getModel().getBoolean("accept");
 		errors.state(request, isAccepted, "accept", "provider.request.error.must-accept");
-
-		isFuture = entity.getDeadline().after(today);
-		errors.state(request, isFuture, "deadline", "provider.request.error.no-future");
-
-		isPositive = entity.getReward().getAmount() > 0;
-		errors.state(request, isPositive, "reward", "provider.request.error.negative-amount");
-
-		isEuro = entity.getReward().getCurrency().equals("EUR") || entity.getReward().getCurrency().equals("€");
-		errors.state(request, isEuro, "reward", "provider.request.error.no-euro");
 
 	}
 
