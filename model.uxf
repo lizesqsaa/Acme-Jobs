@@ -311,11 +311,11 @@ Challenge
 +deadline: Date{Temporal(TIMESTAMP),NotNull}
 +description: String{NotBlank}
 +bronzeGoal: String{NotBlank}
-+bronzeReward: Money{NotNull}
++bronzeReward: Money{NotNull, Valid}
 +silverGoal: String{NotBlank}
-+silverReward: Money{NotNull}
++silverReward: Money{NotNull, Valid}
 +goldGoal: String{NotBlank}
-+goldReward: Money{NotNull}
++goldReward: Money{NotNull, Valid}
   </panel_attributes>
     <additional_attributes/>
   </element>
@@ -367,7 +367,7 @@ InvestorRecords
       <x>553</x>
       <y>364</y>
       <w>308</w>
-      <h>105</h>
+      <h>126</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Offer
@@ -375,7 +375,8 @@ Offer
 + title: String {NotBlank}
 + creationMoment: Date {Temporal(TIMESTAMP),Past,NotNull}
 + deadline: Date {Temporal(TIMESTAMP),NotNull}
-+ amount: Money {NotNull}
++ minAmount: Money {NotNull, Valid}
++ maxAmount: Money {NotNull, Valid}
 + description: String {NotBlank}
 + ticker: Integer {Unique, NotBlank, Pattern(^+O[a-zA-Z]{4}+-[0-9]{5})}</panel_attributes>
     <additional_attributes/>
@@ -395,7 +396,7 @@ Request
 +creationMoment: Date{Temporal(TIMESTAMP),Past,NotNull}
 +deadline: Date{Temporal(TIMESTAMP),NotNull}
 +text: String{NotBlank}
-+reward: Money{NotNull}
++reward: Money{NotNull,Valid}
 +ticker: String{Unique,Pattern(^R[A-Z]{4}-[0-9]{4}$),NotNull}</panel_attributes>
     <additional_attributes/>
   </element>
@@ -435,8 +436,8 @@ Customization
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>392</x>
-      <y>700</y>
+      <x>399</x>
+      <y>560</y>
       <w>385</w>
       <h>77</h>
     </coordinates>
@@ -452,8 +453,8 @@ Customization
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>602</x>
-      <y>854</y>
+      <x>609</x>
+      <y>707</y>
       <w>385</w>
       <h>49</h>
     </coordinates>
@@ -466,8 +467,8 @@ CommercialBanner
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>196</x>
-      <y>854</y>
+      <x>203</x>
+      <y>707</y>
       <w>385</w>
       <h>49</h>
     </coordinates>
@@ -480,23 +481,23 @@ NonCommercialBanner
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>574</x>
-      <y>770</y>
+      <x>581</x>
+      <y>630</y>
       <w>175</w>
-      <h>98</h>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;230.0;120.0</additional_attributes>
+    <additional_attributes>10.0;10.0;230.0;110.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>770</y>
+      <x>427</x>
+      <y>630</y>
       <w>175</w>
-      <h>98</h>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>230.0;10.0;10.0;120.0</additional_attributes>
+    <additional_attributes>230.0;10.0;10.0;110.0</additional_attributes>
   </element>
 </diagram>
